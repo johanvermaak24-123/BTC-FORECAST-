@@ -2,12 +2,12 @@
 <html lang="af">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#08111f"><title>BTC Oracle R6.16.2 — Actionable Forecast</title>
+<meta name="theme-color" content="#08111f"><title>BTC Oracle R6.17.0 — Big Move Radar</title>
 <style>
 :root{--bg:#07101d;--panel:#0d1a2b;--panel2:#11243a;--line:#20364f;--text:#e9f2ff;--muted:#8fa7c3;--cyan:#42d9ff;--green:#43e0a4;--red:#ff7186;--amber:#ffd166;--purple:#a98bff;--shadow:0 18px 50px #0007}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% -10%,#15365b 0,#07101d 42%);color:var(--text);font:14px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input{font:inherit}input[type=number]{width:42%;min-width:132px;background:#071421;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px}button{border:0;border-radius:11px;padding:10px 14px;background:#17304c;color:var(--text);cursor:pointer;font-weight:700}button:hover{filter:brightness(1.18)}button.primary{background:linear-gradient(135deg,#1e9dcc,#4a70ff)}button.danger{background:#5b2436}button.good{background:#155b4d}.wrap{max-width:1180px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:16px}.brand{display:flex;gap:12px;align-items:center}.orb{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#42d9ff 18%,#3651ff 53%,#11152d 70%);box-shadow:0 0 30px #42d9ff88}.brand h1{font-size:18px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}.card{background:linear-gradient(160deg,#11233aee,#0b1728ee);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.hero{min-height:310px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;inset:auto -15% -55% 25%;height:260px;background:radial-gradient(ellipse,#15617e55,transparent 65%);pointer-events:none}.eyebrow{color:var(--cyan);font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.hero h2{font-size:38px;margin:10px 0 5px}.status{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;background:#12283e;color:var(--cyan);font-weight:800}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}.dot.red{background:var(--red);box-shadow:0 0 12px var(--red)}.dot.amber{background:var(--amber);box-shadow:0 0 12px var(--amber)}.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.level{background:#081421aa;border:1px solid #1d3852;border-radius:12px;padding:10px}.level span{display:block;color:var(--muted);font-size:11px}.level b{font-size:16px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.metric{background:#091625;border:1px solid var(--line);border-radius:13px;padding:12px}.metric small{display:block;color:var(--muted)}.metric strong{font-size:20px}.section{margin-top:14px}.section h3{margin:0 0 10px;font-size:15px}.row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #1d3045}.row:last-child{border:0}.muted{color:var(--muted)}.goodtext{color:var(--green)}.badtext{color:var(--red)}.warntext{color:var(--amber)}.pill{font-size:11px;padding:3px 7px;border-radius:8px;background:#172d45;color:var(--muted)}.audit{grid-column:1/-1}.issue{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #1d3045}.sev{font-size:10px;font-weight:900;text-align:center;border-radius:7px;padding:4px;height:max-content}.sev.p0{background:#6b233c;color:#ffdce3}.sev.p1{background:#6c5220;color:#fff0b0}.sev.p2{background:#1d4662;color:#bceaff}.ledger{overflow:auto}.ledger table{width:100%;border-collapse:collapse;min-width:720px}.ledger th,.ledger td{text-align:left;padding:9px;border-bottom:1px solid var(--line);white-space:nowrap}.ledger th{color:var(--muted);font-size:11px}.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.footer{color:var(--muted);font-size:11px;text-align:center;padding:20px}.modal{position:fixed;inset:0;background:#000a;display:none;place-items:center;padding:18px;z-index:5}.modal.open{display:grid}.modalbox{max-width:620px;width:100%;max-height:90vh;overflow:auto;background:#0c1b2d;border:1px solid var(--line);border-radius:18px;padding:18px}.modalbox textarea{width:100%;min-height:230px;background:#07101d;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px}.chart{height:175px;display:flex;align-items:end;gap:3px;padding:15px 4px 5px;background:#081522;border-radius:12px;border:1px solid var(--line);overflow:hidden}.bar{width:7px;background:linear-gradient(#4fe1ab,#2576a1);border-radius:4px 4px 1px 1px;min-height:3px}.bar.down{background:linear-gradient(#ff7186,#82364d)}@media(max-width:850px){.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.levels{grid-template-columns:repeat(2,1fr)}.hero h2{font-size:31px}.top{align-items:flex-start;flex-direction:column}.actions{justify-content:flex-start}.audit{grid-column:auto}}
 
-/* R6.16.2 phone-first actionable forecast */
+/* R6.17.0 phone-first forecast with breakout radar and runner plan */
 body{background:radial-gradient(circle at 50% -15%,#142945 0,#091321 44%,#070d16 100%)}
 .wrap{max-width:980px;padding:clamp(14px,3vw,26px)}
 .oracle-head{padding:18px 0 4px}
@@ -46,6 +46,20 @@ body{background:radial-gradient(circle at 50% -15%,#142945 0,#091321 44%,#070d16
 .position-fields input{width:100%!important;min-width:0!important;min-height:48px}
 .position-plan-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}
 .position-plan-actions button{min-height:48px}
+.mt5-screen-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:14px 0 4px}
+.mt5-screen-button{width:100%;min-height:60px!important;border-radius:18px;background:linear-gradient(110deg,#174a82,#2461a5)!important;font-size:16px;letter-spacing:.03em}
+.mt5-ocr-status{min-height:24px;padding:6px 2px;color:#a6b8cf;font-size:13px}
+.mt5-preview{margin-top:10px;padding:14px;border:1px solid #365473;border-radius:16px;background:#0a1421}
+.mt5-preview[hidden]{display:none}
+.mt5-read-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mt5-read{padding:10px;border:1px solid #22364d;border-radius:12px;background:#08111b;overflow-wrap:anywhere}
+.mt5-read small{display:block;color:#91a5bd;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.mt5-read b{display:block;margin-top:4px;font-size:16px}
+.mt5-import-warning{margin:10px 0 0;padding:10px;border-left:3px solid var(--amber);background:#211b10;color:#ffe6a3;border-radius:8px}
+.mt5-import-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.mt5-capture-note{color:#8295ad;font-size:11px;margin:4px 0 0}
+.mt5-snapshot-box{margin-top:10px;padding:10px;border:1px solid #253b52;border-radius:12px;color:#adbed2;font-size:13px}
+@media(max-width:520px){.mt5-read-grid{grid-template-columns:1fr}}
 .position-plan-status{color:#9baec5;font-size:13px}
 .action-card{margin:14px 0;border-radius:26px;border-color:#315273;padding:clamp(18px,3vw,30px);background:linear-gradient(155deg,#101c2b,#0a111b 65%);overflow:hidden}
 .action-card .eyebrow{color:#78b2ff;font-size:13px}
@@ -88,7 +102,7 @@ button{min-height:46px}
 </style></head>
 <body><main class="wrap">
 <header class="oracle-head">
-<div class="oracle-kicker">BTCUSD · BTC ORACLE R6.16.2 · ACTIONABLE FORECAST · LEARNED TICK TIMING</div>
+<div class="oracle-kicker">BTCUSD · BTC ORACLE R6.17.0 · BIG MOVE RADAR · MT5 SCREEN IMPORT</div>
 <h1 class="oracle-title">BTC ORACLE</h1>
 <p class="oracle-subtitle">Elke scan wys die rigting: BUY, SELL of WAG; presiese MT5-entry, stop, TP1–TP3 en hoekom.</p>
 <div class="oracle-rule"></div>
@@ -107,6 +121,11 @@ button{min-height:46px}
 <div class="eyebrow">Position awareness · tell Oracle what you actually hold</div>
 <h2 class="position-title" id="positionTitle">FLAT — LOOKING FOR NEXT ENTRY</h2>
 <p class="position-copy" id="positionHint">Tap IN BUY or IN SELL only after you actually enter in MT5. After closing, mark TP1, TP2, or SL below before the next scan so learning records the result.</p>
+<div class="mt5-screen-actions"><button class="primary mt5-screen-button" id="readMt5ScreenshotBtn" type="button">READ MT5 SCREENSHOT</button><input id="mt5ScreenshotFile" type="file" accept="image/*" hidden></div>
+<div class="mt5-ocr-status" id="mt5OcrStatus">Import the MT5 BTCUSD chart screenshot to read the open position, entry, TP, floating P/L and RSI.</div>
+<p class="mt5-capture-note">OCR runs in this browser; the screenshot is not uploaded. First use downloads the OCR engine. Check the preview before loading the position.</p>
+<div class="mt5-preview" id="mt5ImportPreview" hidden><div class="mt5-read-grid" id="mt5ImportReadout"></div><p class="mt5-import-warning" id="mt5ImportWarnings"></p><div class="mt5-import-actions"><button class="good" id="applyMt5SnapshotBtn" type="button">LOAD THIS POSITION</button><button id="discardMt5SnapshotBtn" type="button">DISCARD</button></div></div>
+<div class="mt5-snapshot-box" id="mt5SnapshotDisplay" hidden></div>
 <div class="position-buttons">
 <button class="position-choice" id="positionUnknownBtn" data-mode="UNKNOWN" aria-pressed="false">UNKNOWN</button>
 <button class="position-choice" id="positionFlatBtn" data-mode="FLAT" aria-pressed="false">FLAT</button>
@@ -118,7 +137,7 @@ button{min-height:46px}
   <p class="position-plan-title">Open MT5 position · actual fill and protection levels</p>
   <div class="position-fields">
     <label>Actual entry fill<input id="positionEntryPrice" type="number" inputmode="decimal" step="any" placeholder="MT5 fill price"></label>
-    <label>WRONG / stop loss<input id="positionStopPrice" type="number" inputmode="decimal" step="any" placeholder="Stop price"></label>
+    <label>Protective stop-loss<input id="positionStopPrice" type="number" inputmode="decimal" step="any" placeholder="Stop price"></label>
     <label>TP1<input id="positionTp1Price" type="number" inputmode="decimal" step="any" placeholder="Optional"></label>
     <label>TP2<input id="positionTp2Price" type="number" inputmode="decimal" step="any" placeholder="Optional"></label>
     <label>TP3<input id="positionTp3Price" type="number" inputmode="decimal" step="any" placeholder="Optional"></label>
@@ -137,7 +156,10 @@ button{min-height:46px}
   <p><strong>HOEKOM:</strong> <span id="forecastWhy">Die Oracle wys die bewyse agter BUY, SELL of WAG.</span></p>
   <p><strong>JOU DATA:</strong> <span id="forecastLearning">Kontroleer gestoorde tick-leerdata.</span></p>
   <p><strong>GAAN-IN-OPDRAG:</strong> <span id="entryInstruction">Skandeer vir die presiese entry.</span></p>
-  <p><strong>PRYSBRON:</strong> <span id="entrySource">Nog nie geskandeer nie.</span></p>
+  <p><strong>PRYSBRON:</strong> <span id="entrySource">Nog nie geskandeer nie.</span></p><p><strong>MT5-SKERM:</strong> <span id="mt5ForecastContext">Geen MT5-skermskoot ingevoer nie.</span></p>
+  <p><strong>BIG-MOVE RADAR:</strong> <span id="bigMoveStatus">Skandeer vir ’n stywe 20H-reeks of bevestigde uitbreek.</span></p>
+  <p><strong>UITBREEK-VLAK:</strong> <span id="bigMoveTrigger">—</span></p>
+  <p><strong>RUNNER-PLAN:</strong> <span id="runnerPlan">TP3 is die verlengde scenario; bestuur enige oop runner self in MT5.</span></p>
 </div>
 <div class="levels">
   <div class="level"><span>Market quote</span><b id="marketPrice">—</b></div>
@@ -145,7 +167,7 @@ button{min-height:46px}
   <div class="level"><span>WRONG / SL</span><b id="stopPrice">—</b></div>
   <div class="level"><span>TP1</span><b id="tp1Price">—</b></div>
   <div class="level"><span>TP2</span><b id="tp2Price">—</b></div>
-  <div class="level"><span>TP3</span><b id="tp3Price">—</b></div>
+  <div class="level"><span>TP3 · RUNNER EXTENSION</span><b id="tp3Price">—</b></div>
 </div>
 <div class="section action-chart"><div class="chart" id="chart"></div></div>
 </article>
@@ -165,7 +187,8 @@ button{min-height:46px}
 <script>
 'use strict';
 const SCHEMA=6;
-const BUILD='BTC ORACLE R6.16.2-ACTIONABLE-FORECAST';
+const BUILD='BTC ORACLE R6.17.0-BIG-MOVE-RADAR';
+const LEARNING_BUILD='BTC ORACLE R6.16.2-ACTIONABLE-FORECAST';
 const PHONE_FEED_URL='wss://stream.binance.com:9443/ws/btcusdt@bookTicker';
 const KEY='btcOraclePhoneMockGodR6141';
 const TICK_DB='btcOracleTickDBV1';
@@ -183,7 +206,7 @@ const LEARNING_R_CAP=6;
 const MAX_RECENT_FINGERPRINTS=20000;
 const seed={
   meta:{build:BUILD,instrument:'BTCUSD',createdAt:new Date().toISOString(),schema:SCHEMA},
-  brain:null,manualBrokerQuote:null,ledger:[],paper:{position:'FLAT',entry:null,side:null},
+  brain:null,manualBrokerQuote:null,mt5Snapshot:null,ledger:[],paper:{position:'FLAT',entry:null,side:null},
   learning:{micro:[],plans:[],falseFlips:[],news:[],tickOutcomes:[],tickStats:{inputRows:0,stored:0,unique:0,duplicates:0,crossBatchDuplicates:0,invalid:0,wins:0,losses:0,expired:0,gapClosed:0,blockedByLearning:0,resolved:0,sumR:0,rawSumR:0,learningRows:0}},
   tickEngine:{ticks:0,rawTicks:0,last:null,source:'NONE',open:[],resolved:[],batches:[],lastProcessedTime:null,lastProcessedFingerprint:null,lastLearningTime:null,lastLearningQuoteFingerprint:null,lastSignalByStrategy:{},recentFingerprints:[]},
   tickQuality:{batches:0,inputRows:0,parsedRows:0,invalidRows:0,duplicateRows:0,crossBatchDuplicates:0,missingQuotes:0,badSpreads:0,unchangedQuotes:0,learningSkipped:0,gaps:0,outOfOrder:0,zeroLast:0,syntheticLast:0,quarantined:0,lateRows:0,acceptedRows:0,firstTime:null,lastTime:null,lastBatch:null,lastSnapshot:null},
@@ -208,7 +231,7 @@ function normalizeApp(raw){
   a.tickEngine=Object.assign(clone(seed.tickEngine),clone(x.tickEngine||{}));
   a.tickEngine.open=arr(a.tickEngine.open).filter(x=>x&&x.status==='OPEN');a.tickEngine.resolved=arr(a.tickEngine.resolved).slice(-MAX_RESOLVED);a.tickEngine.batches=arr(a.tickEngine.batches).slice(-100);a.tickEngine.lastSignalByStrategy=Object.assign({},x.tickEngine?.lastSignalByStrategy||{});a.tickEngine.recentFingerprints=arr(x.tickEngine?.recentFingerprints).slice(-MAX_RECENT_FINGERPRINTS);
   a.tickQuality=Object.assign(clone(seed.tickQuality),clone(x.tickQuality||{}));
-  a.paper=Object.assign(clone(seed.paper),clone(x.paper||{}));if(!['FLAT','OPEN','UNKNOWN'].includes(a.paper.position))a.paper.position='FLAT';if(a.paper.position==='OPEN'&&!['BUY','SELL'].includes(a.paper.side))a.paper.position='UNKNOWN';a.ledger=arr(a.ledger);a._tickWindow=arr(x._tickWindow||x.tickEngine?.window).slice(-MAX_WINDOW);a.summaryAudit=x.summaryAudit&&typeof x.summaryAudit==='object'?x.summaryAudit:null;
+  a.paper=Object.assign(clone(seed.paper),clone(x.paper||{}));a.mt5Snapshot=x.mt5Snapshot&&typeof x.mt5Snapshot==='object'?clone(x.mt5Snapshot):null;if(!['FLAT','OPEN','UNKNOWN'].includes(a.paper.position))a.paper.position='FLAT';if(a.paper.position==='OPEN'&&!['BUY','SELL'].includes(a.paper.side))a.paper.position='UNKNOWN';a.ledger=arr(a.ledger);a._tickWindow=arr(x._tickWindow||x.tickEngine?.window).slice(-MAX_WINDOW);a.summaryAudit=x.summaryAudit&&typeof x.summaryAudit==='object'?x.summaryAudit:null;
   return a;
 }
 function load(){try{return normalizeApp(JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){return clone(seed)}}
@@ -270,7 +293,7 @@ function renderForwardForecast(f){
 }
 function liveQuote(s,bars){
   const manual=app.manualBrokerQuote;
-  if(manual){const bid=finite(manual.bid)?+manual.bid:null,ask=finite(manual.ask)?+manual.ask:null,spread=bid!==null&&ask!==null?ask-bid:null,time=quoteTime(manual),ageMs=time===null?null:Date.now()-time,future=ageMs!==null&&ageMs < -MAX_CLOCK_SKEW_MS,stale=ageMs===null||ageMs>MAX_SIGNAL_AGE_MS||future;return{price:bid!==null&&ask!==null?(bid+ask)/2:null,bid,ask,spread,source:'Pepperstone MT5 manual quote',time,ageMs,fresh:!stale,quoteValid:bid!==null&&ask!==null&&ask>bid&&spread>0&&spread<=25,proxyOnly:false,manual:true,sourceClass:'PEPPERSTONE_MT5'}}
+  if(manual){const bid=finite(manual.bid)?+manual.bid:null,ask=finite(manual.ask)?+manual.ask:null,spread=bid!==null&&ask!==null?ask-bid:null,time=quoteTime(manual),ageMs=time===null?null:Date.now()-time,future=ageMs!==null&&ageMs < -MAX_CLOCK_SKEW_MS,stale=ageMs===null||ageMs>MAX_SIGNAL_AGE_MS||future;if(!stale)return{price:bid!==null&&ask!==null?(bid+ask)/2:null,bid,ask,spread,source:'Pepperstone MT5 manual quote',time,ageMs,fresh:true,quoteValid:bid!==null&&ask!==null&&ask>bid&&spread>0&&spread<=25,proxyOnly:false,manual:true,sourceClass:'PEPPERSTONE_MT5'}}
   const m=app.scanMarket?.lastMarket||s?.lastMarket||{},t=app.tickEngine?.last||{};
   const choices=[{raw:m,source:String(m.provider||m.source||m.feed||'imported market')},{raw:t,source:String(t.provider||t.source||app.tickEngine?.source||'tick import')}]
     .filter(x=>x.raw&&(finite(x.raw.price)||finite(x.raw.last)||finite(x.raw.bid)||finite(x.raw.ask)))
@@ -284,19 +307,66 @@ function forecastDirection(p,threshold=.58){
   if(p.upShare<=1-threshold&&p.medianBps<0)return-1;
   return 0;
 }
+function medianOf(values){const a=values.filter(finite).map(Number).sort((x,y)=>x-y);if(!a.length)return null;const m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2}
+function trueRangeAt(bars,i){const b=bars[i];if(!b||!finite(b.close))return null;const close=+b.close,prev=i>0&&finite(bars[i-1]?.close)?+bars[i-1].close:close,hi=finite(b.high)?+b.high:close,lo=finite(b.low)?+b.low:close;return Math.max(hi-lo,Math.abs(hi-prev),Math.abs(lo-prev))}
+function forecastTailDistance(entry,p,dir){const bps=dir>0?p?.q90Bps:(finite(p?.q10Bps)?-p.q10Bps:null);return p?.state==='READY'&&finite(bps)&&bps>0?entry*bps/10000:0}
+function detectBigMoveRadar(bars,p1,p3,p6,q={}){
+  if(!Array.isArray(bars)||bars.length<48)return{state:'INSUFFICIENT',dir:0,reason:'Need at least 48 closed H1 candles for the 20H range and volatility check.'};
+  const n=bars.length,last=bars[n-1],prior=bars.slice(n-21,n-1);if(prior.length<20)return{state:'INSUFFICIENT',dir:0,reason:'Need 20 complete H1 candles before testing the range.'};
+  const high=Math.max(...prior.map(x=>finite(x.high)?+x.high:+x.close)),low=Math.min(...prior.map(x=>finite(x.low)?+x.low:+x.close));
+  const priorTR=Array.from({length:20},(_,k)=>trueRangeAt(bars,n-21+k)).filter(finite),baseTR=medianOf(priorTR),coilTR=medianOf(priorTR.slice(-6)),lastTR=trueRangeAt(bars,n-1);
+  const compression=baseTR>0&&finite(coilTR)?coilTR/baseTR:null,volumeBase=medianOf(prior.map(x=>x.volume).filter(v=>finite(v)&&+v>0)),volumeRatio=volumeBase&&finite(last.volume)&&+last.volume>0?+last.volume/volumeBase:null;
+  const spread=finite(q?.spread)&&+q.spread>0?+q.spread:0,buffer=Math.max(spread*1.5,(baseTR||0)*.08,(+last.close||0)*.000015),close=+last.close;
+  const upBreak=close>high+buffer&&(!finite(last.open)||close>+last.open),downBreak=close<low-buffer&&(!finite(last.open)||close<+last.open),breakDir=upBreak?1:downBreak?-1:0;
+  const d1=forecastDirection(p1,.58),d3=forecastDirection(p3,.55),d6=forecastDirection(p6,.58);
+  const common={dir:0,priorHigh:high,priorLow:low,rangeHigh:high,rangeLow:low,atrBase:baseTR,compressionRatio:compression,rangeExpansion:lastTR&&baseTR?lastTR/baseTR:null,volumeRatio,buffer,d1,d3,d6,trigger:null,retestPrice:null,breakoutConfirmed:false};
+  if(breakDir){
+    const p1Supports=d1===breakDir||(p1?.state==='READY'&&d1===0&&Math.sign(+p1.medianBps||0)===breakDir),higherSupports=d3===breakDir||d6===breakDir,noOpposing=d3!==-breakDir&&d6!==-breakDir,rangeExpanded=baseTR>0&&lastTR>=baseTR*1.25,volumeExpanded=volumeRatio!==null&&volumeRatio>=1.30,confirmed=(rangeExpanded||volumeExpanded)&&p1Supports&&higherSupports&&noOpposing;
+    return{...common,state:confirmed?'CONFIRMED':'VERIFY',dir:breakDir,trigger:breakDir>0?high+buffer:low-buffer,retestPrice:breakDir>0?high:low,breakoutConfirmed:confirmed,rangeExpanded,volumeExpanded,reason:confirmed?'20H range break, H1 range or volume expansion, and directional forecast context agree.':'Price has crossed the 20H range, but expansion and multi-horizon confirmation are incomplete; wait for confirmation.'};
+  }
+  for(let k=n-2;k>=Math.max(48,n-5);k--){
+    const candle=bars[k],window=bars.slice(k-20,k);if(window.length<20)continue;
+    const rangeHigh=Math.max(...window.map(x=>finite(x.high)?+x.high:+x.close)),rangeLow=Math.min(...window.map(x=>finite(x.low)?+x.low:+x.close)),refTR=medianOf(window.map((_,i)=>trueRangeAt(bars,k-20+i)).filter(finite)),breakTR=trueRangeAt(bars,k),refVol=medianOf(window.map(x=>x.volume).filter(v=>finite(v)&&+v>0)),volRatio=refVol&&finite(candle.volume)&&+candle.volume>0?+candle.volume/refVol:null;
+    const breakBuffer=Math.max(spread*1.5,(refTR||0)*.08,(+candle.close||0)*.000015),candleClose=+candle.close,dir=candleClose>rangeHigh+breakBuffer&&(!finite(candle.open)||candleClose>+candle.open)?1:candleClose<rangeLow-breakBuffer&&(!finite(candle.open)||candleClose<+candle.open)?-1:0;
+    if(!dir)continue;
+    const p1Supports=d1===dir||(p1?.state==='READY'&&d1===0&&Math.sign(+p1.medianBps||0)===dir),higherSupports=d3===dir||d6===dir,noOpposing=d3!==-dir&&d6!==-dir,rangeExpanded=refTR>0&&breakTR>=refTR*1.25,volumeExpanded=volRatio!==null&&volRatio>=1.30;
+    if(!(rangeExpanded||volumeExpanded)||!p1Supports||!higherSupports||!noOpposing)continue;
+    const boundary=dir>0?rangeHigh:rangeLow,stillValid=dir>0?close>=boundary-(refTR||baseTR||0)*.28:close<=boundary+(refTR||baseTR||0)*.28;if(!stillValid)continue;
+    const trigger=dir>0?boundary+breakBuffer:boundary-breakBuffer,livePrice=finite(q?.price)?+q.price:close,chase=Math.max(0,dir>0?livePrice-trigger:trigger-livePrice),nearRetest=Math.abs(livePrice-boundary)<=Math.max((refTR||baseTR||0)*.28,spread*2),state=nearRetest?'RETEST_READY':chase>Math.max((refTR||baseTR||0)*.75,spread*4)?'RETEST_ONLY':'CONFIRMED';
+    return{...common,state,dir,priorHigh:rangeHigh,priorLow:rangeLow,rangeHigh,rangeLow,atrBase:refTR||baseTR,rangeExpansion:breakTR&&refTR?breakTR/refTR:null,volumeRatio:volRatio,buffer:breakBuffer,trigger,retestPrice:boundary,breakoutConfirmed:true,rangeExpanded,volumeExpanded,chaseDistance:chase,ageBars:n-1-k,reason:state==='RETEST_READY'?'A recent confirmed 20H breakout has retested its boundary while the latest H1 close still holds beyond it.':state==='RETEST_ONLY'?'A recent confirmed breakout has moved more than 0.75 H1 range units beyond its trigger. Wait for a retest; do not chase.':'A recent 20H breakout remains confirmed by expansion and directional forecast context.'};
+  }
+  const consensus=d3&&d3===d6?d3:0,bias=d1||(p1?.state==='READY'&&consensus&&Math.sign(+p1.medianBps||0)===consensus?consensus:0),nearDistance=bias>0?high-close:close-low,contextOk=bias!==0&&d3!==-bias&&d6!==-bias,near=finite(nearDistance)&&nearDistance>=-buffer&&nearDistance<=Math.max((baseTR||0)*.65,buffer*3);
+  if(compression!==null&&compression<=.78&&near&&contextOk){const trigger=bias>0?high+buffer:low-buffer;return{...common,state:'ARMED',dir:bias,trigger,retestPrice:bias>0?high:low,reason:'H1 ranges have compressed near the 20H boundary. Wait for a closed breakout; do not enter inside the range.'}}
+  return{...common,state:'NO_SETUP',reason:'No compressed 20H boundary setup or confirmed range breakout is present.'};
+}
 function manageOpenPosition(core,bars){
   const p=app.paper||{};
   if(p.position!=='OPEN')return core;
   const dir=p.side==='BUY'?1:-1,q=core.q||{},entry=finite(p.entry)?+p.entry:null,stop=finite(p.stop)?+p.stop:null,tp1=finite(p.tp1)?+p.tp1:null,tp2=finite(p.tp2)?+p.tp2:null,tp3=finite(p.tp3)?+p.tp3:null,mark=dir>0?q.bid:q.ask;
   const held={...core,dir,entry,stop,tp1,tp2,tp3,paperPosition:true,confidence:0};
-  if(entry===null||stop===null)return{...held,action:'HOLD · COMPLETE POSITION PLAN',note:'Position recorded. Enter its actual MT5 fill and WRONG / stop level above before Oracle checks target or exit levels.'};
-  if(!q.manual||!q.fresh||!q.quoteValid||!finite(mark))return{...held,action:'HOLD · UPDATE MT5 QUOTE',note:'Position is open. Copy a fresh Pepperstone MT5 Bid/Ask and scan again; no public proxy quote is used to call an exit.'};
-  if(stop!==null&&(dir>0?mark<=stop:mark>=stop))return{...held,action:'EXIT NOW · STOP',note:'The executable MT5 quote has crossed your saved stop level. Close or manage the position in MT5 now.'};
-  if(tp3!==null&&(dir>0?mark>=tp3:mark<=tp3))return{...held,action:'TP3 HIT · MANAGE NOW',note:'The executable MT5 quote reached TP3. Manage or close the position in MT5; the app does not move stops.'};
-  if(tp2!==null&&(dir>0?mark>=tp2:mark<=tp2))return{...held,action:'TP2 HIT · MANAGE NOW',note:'The executable MT5 quote reached TP2. Manage the position in MT5; the app does not move stops.'};
-  if(tp1!==null&&(dir>0?mark>=tp1:mark<=tp1))return{...held,action:'TP1 HIT · MANAGE NOW',note:'The executable MT5 quote reached TP1. Manage the position in MT5; the app does not move stops.'};
+  const brokerQuote=(q.manual||q.sourceClass==='PEPPERSTONE_MT5')&&q.fresh&&q.quoteValid&&finite(mark);
+  const proxyQuote=q.proxyOnly&&q.fresh&&q.quoteValid&&finite(mark);
+  if(entry===null)return{...held,action:'HOLD · VERIFY POSITION',note:'The position was selected but no reliable entry price is saved. Read the MT5 screenshot again or save the actual fill before using level checks.'};
+  const movePnl=finite(p.volume)&&finite(mark)?dir*(mark-entry)*(+p.volume):null;
+  const pnlText=finite(movePnl)?' Approximate price-move P/L at '+fmt(mark)+': '+(movePnl<0?'-':'')+'$'+Math.abs(movePnl).toFixed(2)+' USD before Pepperstone costs.':'';
+  if(proxyQuote){
+    if(stop!==null&&(dir>0?mark<=stop:mark>=stop))return{...held,action:'EXIT REVIEW · VERIFY MT5 NOW',note:'The live public BTC price is at or beyond the saved stop. Verify the current Pepperstone position and quote in MT5 now; this public feed cannot confirm a broker fill or execute a close.'+pnlText};
+    if(tp3!==null&&(dir>0?mark>=tp3:mark<=tp3))return{...held,action:'TP3 CHECK · VERIFY MT5',note:'The live public BTC price is at or beyond TP3. Verify the actual Pepperstone quote and position in MT5 before acting; this is only a public-feed alert.'+pnlText};
+    if(tp2!==null&&(dir>0?mark>=tp2:mark<=tp2))return{...held,action:'RUNNER · TRAIL REVIEW',note:'TP2 is reached and price is below TP3. If you have already taken partial profit, manage the remainder as a runner only while the H1 breakout holds. The 1.25 ATR trail reference is '+fmt(core.runnerTrailPrice)+'; verify the broker quote and update protection manually in MT5. Never widen the original stop.'+pnlText};
+    if(tp1!==null&&(dir>0?mark>=tp1:mark<=tp1))return{...held,action:'TP1 CHECK · VERIFY MT5',note:'The live public BTC price is at or beyond TP1. Verify the actual Pepperstone quote and position in MT5 before acting; this is only a public-feed alert.'+pnlText};
+    const opposite=forecastDirection(core.forward1,.62)===-dir&&forecastDirection(core.forward3,.55)===-dir;
+    if(opposite)return{...held,action:'EXIT REVIEW · VERIFY MT5 NOW',note:'The live 1H and 3H forecasts oppose your open position. Review the actual position in MT5; the public exchange feed is not Pepperstone and cannot confirm an exit.'+pnlText};
+    if(stop===null)return{...held,action:'RISK ALERT · STOP NOT VISIBLE',note:'The screenshot did not show a stop-loss. Check the protective stop on the open MT5 position now. The displayed public-feed price and P/L are estimates only.'+pnlText};
+    return{...held,action:'HOLD · PUBLIC PRICE ESTIMATE',note:'The fresh public BTC price is between the saved levels. This is an estimate, not Pepperstone execution data; confirm your position in MT5.'+pnlText};
+  }
+  if(!brokerQuote)return{...held,action:'HOLD · LIVE QUOTE UNAVAILABLE',note:'Position is recorded, but no fresh valid price is available for its level check. Keep MT5 open and verify the broker position there.'};
+  if(stop!==null&&(dir>0?mark<=stop:mark>=stop))return{...held,action:'EXIT NOW · STOP',note:'The executable Pepperstone/MT5 quote has crossed your saved stop level. Close or manage the position in MT5 now.'};
+  if(tp3!==null&&(dir>0?mark>=tp3:mark<=tp3))return{...held,action:'TP3 HIT · MANAGE NOW',note:'The executable Pepperstone/MT5 quote reached TP3. Manage or close the position in MT5; the app does not move stops.'};
+  if(tp2!==null&&(dir>0?mark>=tp2:mark<=tp2))return{...held,action:'RUNNER · TRAIL REVIEW',note:'TP2 is reached and price is below TP3. If you have already taken partial profit, manage the remainder as a runner only while the H1 breakout holds. The 1.25 ATR trail reference is '+fmt(core.runnerTrailPrice)+'; update protection manually in MT5. Never widen the original stop.'};
+  if(tp1!==null&&(dir>0?mark>=tp1:mark<=tp1))return{...held,action:'TP1 HIT · MANAGE NOW',note:'The executable Pepperstone/MT5 quote reached TP1. Manage the position in MT5; the app does not move stops.'};
   const opposite=forecastDirection(core.forward1,.62)===-dir&&forecastDirection(core.forward3,.55)===-dir;
   if(opposite)return{...held,action:'EXIT REVIEW · FORECAST FLIP',note:'The 1H and 3H forward forecasts now oppose your open position. Review it in MT5; the saved stop remains the hard invalidation.'};
+  if(stop===null)return{...held,action:'RISK ALERT · STOP NOT VISIBLE',note:'No stop-loss is saved for this position. Check the protective stop on the open MT5 position now.'};
   return{...held,action:'HOLD',note:'Position is open and the fresh executable MT5 quote is inside the saved stop/target levels. Hold only while your plan remains valid.'};
 }
 function forecastThreshold(w1){
@@ -348,20 +418,28 @@ function forecastReferenceQuote(q,bars){
   return{price,bid:null,ask:null,spread:null,time:epochMs(last?.time),ageMs:null,fresh:false,quoteValid:false,source:'last closed H1 candle',sourceClass:'BARS_ONLY',manual:false,proxyOnly:false,referenceSource:'last closed H1 candle · stale reference',referenceFresh:false};
 }
 function buildForecastPlan(p1,p3,p6,w1,q,bars,fastDir,higher,r){
-  const threshold=forecastThreshold(w1),dir=forecastDirection(p1,threshold),ref=forecastReferenceQuote(q,bars);
+  const threshold=forecastThreshold(w1),ref=forecastReferenceQuote(q,bars),a=atr(bars),radar=detectBigMoveRadar(bars,p1,p3,p6,ref);
+  let dir=forecastDirection(p1,threshold);if(!dir&&radar.breakoutConfirmed)dir=radar.dir;
   const d3=forecastDirection(p3,.55),d6=forecastDirection(p6,.58),counter=!d3||d3!==dir;
-  const base={state:p1?.state==='READY'?'READY':'INSUFFICIENT',dir,threshold,d3,d6,counter,reference:ref,fastDir,higher,rsi:r,p1,p3,p6};
+  const base={state:p1?.state==='READY'?'READY':'INSUFFICIENT',dir,threshold,d3,d6,counter,reference:ref,fastDir,higher,rsi:r,p1,p3,p6,bigMove:radar};
   if(!dir)return base;
   const entry=dir>0?(finite(ref.ask)?+ref.ask:+ref.price):(finite(ref.bid)?+ref.bid:+ref.price);
   if(!finite(entry)||entry<=0)return{...base,state:'NO_PRICE_REFERENCE',dir,entry:null};
-  const spread=finite(ref.spread)&&+ref.spread>0?+ref.spread:0,a=atr(bars),projectedDistance=Math.abs(entry*(+p1.medianBps||0)/10000),minProjected=Math.max(spread*3.5,(a||0)*.30);
-  const stopDist=Math.max((a||projectedDistance*.7)*1.05,spread*1.8);
+  const spread=finite(ref.spread)&&+ref.spread>0?+ref.spread:0;
+  if(radar.breakoutConfirmed&&finite(radar.trigger)){
+    const chase=Math.max(0,dir>0?entry-radar.trigger:radar.trigger-entry),nearRetest=Math.abs(entry-radar.retestPrice)<=Math.max((radar.atrBase||a||0)*.28,spread*2);
+    radar.chaseDistance=chase;if(chase>Math.max((radar.atrBase||a||0)*.75,spread*4)){radar.state='RETEST_ONLY';radar.reason='The confirmed breakout is already more than 0.75 H1 range units beyond its trigger. Wait for a retest; do not chase.'}
+    else if(nearRetest){radar.state='RETEST_READY';radar.reason='The confirmed 20H breakout has retested its boundary. The current quote is near the trigger and the H1 close remains beyond it.'}
+  }
+  const medianBps=finite(p1?.medianBps)&&Math.sign(+p1.medianBps)===dir?Math.abs(+p1.medianBps):0,projectedDistance=Math.max(entry*medianBps/10000,radar.breakoutConfirmed?(a||radar.atrBase||0)*1.2:0),minProjected=Math.max(spread*3.5,(a||0)*.30);
+  let stopDist=Math.max((a||projectedDistance*.7)*1.05,spread*1.8);
+  if(radar.breakoutConfirmed){const boundaryStop=dir>0?radar.rangeHigh-(radar.atrBase||a||0)*.15:radar.rangeLow+(radar.atrBase||a||0)*.15;stopDist=Math.max(stopDist,Math.abs(entry-boundaryStop))}
   const tp1Dist=Math.max(spread*2.2,Math.min(projectedDistance*.60,Math.max((a||0)*.90,spread*3.0)));
   const tp2Dist=Math.max(tp1Dist*1.20,Math.min(projectedDistance*.86,Math.max((a||0)*1.25,spread*3.5)));
-  const tp3Dist=Math.max(tp2Dist,projectedDistance*.96);
+  const tails=[[1,p1,.58],[3,p3,.55],[6,p6,.58]].filter(([h,p,t])=>forecastDirection(p,t)===dir).map(([h,p])=>({h,distance:forecastTailDistance(entry,p,dir)})).filter(x=>x.distance>0).sort((x,y)=>y.distance-x.distance),tail=tails[0]||null,tailCap=Math.max(tp2Dist*1.4,(a||0)*6),tp3Dist=Math.max(tp2Dist*1.3,Math.min(tail?tail.distance*.85:tp2Dist*1.3,tailCap));
   const stop=entry-dir*stopDist,tp1=entry+dir*tp1Dist,tp2=entry+dir*tp2Dist,tp3=entry+dir*tp3Dist;
-  const confidence=clamp(50+Math.abs(p1.upShare-.5)*180+(d3===dir?8:0)-(counter?8:0),45,82);
-  return{...base,entry,stop,tp1,tp2,tp3,atr:a,spread,projectedDistance,minProjected,costViable:projectedDistance>=minProjected,entryTolerance:Math.max(spread*3,(a||0)*.15,entry*.0001),confidence};
+  const share=finite(p1?.upShare)?Math.abs(p1.upShare-.5):0,confidence=clamp(50+share*180+(d3===dir?8:0)-(counter?8:0)+(radar.breakoutConfirmed?5:0),45,87);
+  return{...base,dir,entry,stop,tp1,tp2,tp3,atr:a,spread,projectedDistance,minProjected,costViable:projectedDistance>=minProjected,entryTolerance:Math.max(spread*3,(a||0)*.15,entry*.0001),confidence,runnerHorizon:tail?.h||(d6===dir?6:d3===dir?3:1),runnerSource:tail?tail.h+'H favorable-tail scenario':'ATR extension scenario',runnerTrailDistance:Math.max((a||0)*1.25,spread*3)};
 }
 function currentTickEvidence(){
   const rows=arr(app._tickWindow),i=rows.length-1;
@@ -389,8 +467,8 @@ function signal(){
   const forward=computeForwardForecast(bars),p1=forward.horizons?.[1]?.prediction||null,p3=forward.horizons?.[3]?.prediction||null,p6=forward.horizons?.[6]?.prediction||null,w1=forward.horizons?.[1]?.validation||null;
   const c=bars.map(x=>+x.close),a=atr(bars),r=rsi(c),bar1=c.length>1?c.at(-1)-c.at(-2):0,bar3=c.length>3?c.at(-1)-c.at(-4):0,bar6=c.length>6?c.at(-1)-c.at(-7):0;
   const fastScore=(bar1>0?1:bar1<0?-1:0)+(bar3>0?1:bar3<0?-1:0)+(bar6>0?1:bar6<0?-1:0),fastDir=fastScore>0?1:fastScore<0?-1:0,higher=c.length>=60?(c.at(-1)>ema(c.slice(-60),36)?1:-1):0;
-  const forecastPlan=buildForecastPlan(p1,p3,p6,w1,q,bars,fastDir,higher,r),tickEvidence=currentTickEvidence();
-  const base={q,priceOk,spreadOk,quoteFresh,barsFresh,forward1:p1,forward3:p3,forward6:p6,forecast1:horizonBias(bars,1,Math.max(q.spread||0,0)*.1),forecast3:horizonBias(bars,3,Math.max(q.spread||0,0)*.1),forecast6:horizonBias(bars,6,Math.max(q.spread||0,0)*.1),confidence:forecastPlan.confidence||0,fastDir,higher,forecastPlan,tickEvidence};
+  const forecastPlan=buildForecastPlan(p1,p3,p6,w1,q,bars,fastDir,higher,r),tickEvidence=currentTickEvidence(),trailDir=app.paper?.position==='OPEN'?(app.paper.side==='BUY'?1:-1):forecastPlan.dir,markForTrail=trailDir>0?q.bid:trailDir<0?q.ask:null,runnerTrailPrice=finite(markForTrail)&&finite(a)?markForTrail-trailDir*a*1.25:null;
+  const base={q,priceOk,spreadOk,quoteFresh,barsFresh,forward1:p1,forward3:p3,forward6:p6,forecast1:horizonBias(bars,1,Math.max(q.spread||0,0)*.1),forecast3:horizonBias(bars,3,Math.max(q.spread||0,0)*.1),forecast6:horizonBias(bars,6,Math.max(q.spread||0,0)*.1),confidence:forecastPlan.confidence||0,fastDir,higher,forecastPlan,tickEvidence,runnerTrailPrice};
   const planLevels=forecastPlan.dir?{entry:forecastPlan.entry??null,stop:forecastPlan.stop??null,tp1:forecastPlan.tp1??null,tp2:forecastPlan.tp2??null,tp3:forecastPlan.tp3??null}:{entry:null,stop:null,tp1:null,tp2:null,tp3:null};
   const wait=(note,extra={})=>manageOpenPosition({action:'WAIT',note,dir:0,...base,...planLevels,...extra},bars);
   if(app.paper?.position==='UNKNOWN')return wait('WAIT — confirm FLAT, IN BUY, or IN SELL before considering a new entry.');
@@ -400,8 +478,16 @@ function signal(){
   if(!spreadOk)return wait('WAIT — a fresh positive Bid/Ask spread is required; last-price or bars-only data cannot pass the cost gate.');
   if(p1?.state!=='READY')return wait('WAIT — the 1H forward forecast has only '+(p1?.n||0)+' of '+FORECAST_MIN_ANALOGS+' required historical analogs.');
   const dir=forecastPlan.dir;
+  const radar=forecastPlan.bigMove||{};
+  if(radar.state==='ARMED'){
+    const armedDir=dir||radar.dir,armedPlan=dir?forecastPlan:{...forecastPlan,dir:radar.dir},side=radar.dir>0?'BUY':'SELL';
+    return manageOpenPosition({action:'WAIT · BIG MOVE ARMED',note:'Stywe H1-reeks naby die 20H-grens. Moenie binne die reeks ingaan nie. Wag vir ’n geslote H1-uitbreek bo/onder '+fmt(radar.trigger)+' en ’n nuwe MT5-scan.',dir:armedDir,...base,forecastPlan:armedPlan,...planLevels},bars);
+  }
+  if(radar.state==='VERIFY')return wait('WAIT · BIG MOVE NEEDS CONFIRMATION — die 20H-grens is gebreek, maar reeks/volume-uitbreiding en hoër-tydraam-bevestiging is nie volledig nie.',{bigMoveRadar:radar});
+  if(radar.state==='RETEST_ONLY')return wait('WAIT · NO CHASE — die bevestigde uitbreek is reeds verby die entry-sone. Wag vir ’n retest naby '+fmt(radar.retestPrice)+' en skandeer weer.',{bigMoveRadar:radar});
   if(!dir)return wait('WAIT — the 1H analogs do not agree strongly enough on one direction; no BUY/SELL plan is active.');
-  if(forecastPlan.counter&&Math.abs(p1.upShare-.5)<.20)return wait(forecastPlan.d3?'WAIT — the 1H and 3H forward forecasts conflict.':'WAIT — 3H evidence is not directional; 1H evidence is not strong enough for an early setup.');
+  if(radar.state==='ARMED')return wait('WAIT · BIG MOVE ARMED — wag vir die geslote H1-uitbreek bo/onder '+fmt(radar.trigger)+' voor ’n entry.');
+  if(forecastPlan.counter&&Math.abs(p1.upShare-.5)<.20&&!radar.breakoutConfirmed)return wait(forecastPlan.d3?'WAIT — the 1H and 3H forward forecasts conflict.':'WAIT — 3H evidence is not directional; 1H evidence is not strong enough for an early setup.');
   if(!forecastPlan.costViable)return wait('WAIT — the 1H median forecast does not clear the spread and volatility cost floor.');
   const tickMatchesSource=tickEvidence.sourceClass&&tickEvidence.sourceClass===q.sourceClass;
   if(tickMatchesSource&&tickEvidence.dir===dir&&tickEvidence.state==='BLOCK')return wait('WAIT — saved tick outcomes block this exact '+tickEvidence.strategy+' '+(dir>0?'BUY':'SELL')+' setup for this data source ('+tickEvidence.learning.samples+' results; average '+tickEvidence.learning.expectancyR+'R).');
@@ -409,19 +495,20 @@ function signal(){
   const d3=forecastPlan.d3,d6=forecastPlan.d6,counter=forecastPlan.counter,entry=forecastPlan.entry,stop=forecastPlan.stop,tp1=forecastPlan.tp1,tp2=forecastPlan.tp2,tp3=forecastPlan.tp3;
   let action,note;
   if(q.proxyOnly){
-    action='PROXY SETUP · '+(dir>0?'BUY':'SELL');
+    action='PROXY SETUP · '+(dir>0?'BUY':'SELL')+(radar.breakoutConfirmed?' · BIG MOVE':'');
     note='FORECAST '+(dir>0?'BUY':'SELL')+' at the public-feed reference shown below. Compare Pepperstone MT5 '+(dir>0?'Ask':'Bid')+' with the entry; only consider the plan if the broker price is within '+fmt(forecastPlan.entryTolerance)+' of this reference. Public price is not your Pepperstone quote.';
   }else if(q.manual&&q.sourceClass==='PEPPERSTONE_MT5'){
-    action=(counter?'EARLY ':'')+'ENTER '+(dir>0?'BUY':'SELL')+' NOW · MT5';
+    action=(counter?'EARLY ':'')+'ENTER '+(dir>0?'BUY':'SELL')+' NOW · MT5'+(radar.breakoutConfirmed?' · BIG MOVE':'');
     note='Use the displayed '+(dir>0?'Ask':'Bid')+' entry '+fmt(entry)+', WRONG/SL '+fmt(stop)+', TP1 '+fmt(tp1)+', TP2 '+fmt(tp2)+', TP3 '+fmt(tp3)+'. This is a manual plan; the app does not place orders.';
   }else{
     action='WAIT · VERIFY MT5 QUOTE';
     note='A '+(dir>0?'BUY':'SELL')+' forecast exists and its entry plan is displayed. Refresh the Pepperstone MT5 Bid/Ask before acting.';
   }
   if(d6&&d6!==dir)note+=' The 6H forecast points the other way, so this is a shorter-horizon setup.';
+  if(radar.breakoutConfirmed)note+=' BIG MOVE confirmed: 20H range break plus expansion and higher-horizon alignment. TP3 is an extension scenario, not a guaranteed target.';
   if(tickMatchesSource&&tickEvidence.dir===dir&&tickEvidence.state==='FAVOURED')note+=' A mature tick-learning pattern also supports this direction.';
   const confidence=clamp(forecastPlan.confidence+(tickMatchesSource&&tickEvidence.dir===dir&&tickEvidence.state==='FAVOURED'?5:0),45,87);
-  return manageOpenPosition({action,note,dir,q,entry,stop,tp1,tp2,tp3,rsi:r,atr:a,fastDir,higher,fastScore,priceOk,spreadOk,quoteFresh,barsFresh,forward1:p1,forward3:p3,forward6:p6,forecast1:base.forecast1,forecast3:base.forecast3,forecast6:base.forecast6,confidence,counter,projectedDistance:forecastPlan.projectedDistance,minProjected:forecastPlan.minProjected,forecastPlan,tickEvidence},bars);
+  return manageOpenPosition({action,note,dir,q,entry,stop,tp1,tp2,tp3,rsi:r,atr:a,fastDir,higher,fastScore,priceOk,spreadOk,quoteFresh,barsFresh,forward1:p1,forward3:p3,forward6:p6,forecast1:base.forecast1,forecast3:base.forecast3,forecast6:base.forecast6,confidence,counter,projectedDistance:forecastPlan.projectedDistance,minProjected:forecastPlan.minProjected,forecastPlan,tickEvidence,runnerTrailPrice},bars);
 }
 function audit(){
   const s=getState()||{},e=s.lastEvidence||{},l=s.learning||{},a=[];
@@ -469,25 +556,49 @@ function renderMarketCards(sig){
   if(!finite(manual.bid)||!finite(manual.ask))quoteStatus.textContent='Pepperstone quote not entered · fresh manual Bid/Ask is required for ENTER BUY / SELL.';
   else{const ageSeconds=(Date.now()-(+manual.updatedAt||0))/1000;quoteStatus.textContent=ageSeconds<=MAX_SIGNAL_AGE_MS/1000?'PEPPERSTONE MT5 QUOTE · MANUAL · '+Math.max(0,Math.floor(ageSeconds))+'s old · expires after 15s.':'MT5 QUOTE STALE · re-enter current Pepperstone Bid/Ask before acting.'}
 }
-function renderPositionCard(){
+function renderPositionCard(sig){
   const p=app.paper||{},title=document.getElementById('positionTitle'),hint=document.getElementById('positionHint'),form=document.getElementById('positionPlanForm'),meta=document.getElementById('positionMeta');
   let mode='FLAT';
   if(p.position==='UNKNOWN')mode='UNKNOWN';else if(p.position==='OPEN'&&p.side==='BUY')mode='BUY';else if(p.position==='OPEN'&&p.side==='SELL')mode='SELL';
   const titles={UNKNOWN:'UNKNOWN — CONFIRM YOUR MT5 POSITION',FLAT:'FLAT — LOOKING FOR NEXT ENTRY',BUY:'IN BUY — POSITION ACTIVE',SELL:'IN SELL — POSITION ACTIVE'};
   title.textContent=titles[mode];
   title.className='position-title'+(mode==='SELL'?' sell':mode==='UNKNOWN'?' unknown':'');
-  hint.textContent=mode==='UNKNOWN'?'No new entry will be shown until you select FLAT, IN BUY, or IN SELL.':mode==='FLAT'?'Tap IN BUY or IN SELL only after you actually enter in MT5. Oracle does not read your Pepperstone account.':'Position monitoring is manual. Save the actual fill and WRONG / stop level; Oracle will use fresh MT5 Bid/Ask to check HOLD, targets, or EXIT.';
+  hint.textContent=mode==='UNKNOWN'?'No new entry will be shown until you select FLAT, IN BUY, or IN SELL.':mode==='FLAT'?'Tap IN BUY or IN SELL only after you actually enter in MT5, or import an MT5 screenshot.':'Position is tracked from your MT5 screenshot. Fresh public BTC prices provide estimates; verify every HOLD/EXIT alert against Pepperstone MT5.';
   const ids={UNKNOWN:'positionUnknownBtn',FLAT:'positionFlatBtn',BUY:'positionBuyBtn',SELL:'positionSellBtn'};
   for(const k of Object.keys(ids)){const b=document.getElementById(ids[k]),selected=mode===k;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected))}
   form.hidden=p.position!=='OPEN';
   if(p.position==='OPEN'){
     const labels=[['positionEntryPrice',p.entry],['positionStopPrice',p.stop],['positionTp1Price',p.tp1],['positionTp2Price',p.tp2],['positionTp3Price',p.tp3]];
     for(const [id,value] of labels){const el=document.getElementById(id);if(document.activeElement!==el)el.value=finite(value)?String(value):''}
-    meta.textContent=finite(p.entry)?'Actual fill '+fmt(p.entry)+' · stop '+fmt(p.stop)+' · manual MT5 position.':'IN '+p.side+' selected · complete its actual fill and stop below.';
-    document.getElementById('positionPlanStatus').textContent=finite(p.entry)&&finite(p.stop)?'Saved '+p.side+' plan · Oracle checks only fresh manual MT5 quotes.':'Add your actual fill and stop before relying on HOLD / EXIT checks.';
+    const snap=app.mt5Snapshot||null,parts=[];
+    parts.push((finite(p.volume)?fmt(p.volume)+' lot · ':'')+'entry '+fmt(p.entry));
+    if(finite(p.stop))parts.push('SL '+fmt(p.stop));else parts.push('STOP NOT VISIBLE');
+    if(finite(p.tp1))parts.push('TP1 '+fmt(p.tp1));
+    if(finite(p.snapshotPnl))parts.push('screenshot P/L '+(p.snapshotPnl<0?'-':'')+'$'+Math.abs(+p.snapshotPnl).toFixed(2)+' USD');
+    if(snap&&finite(snap.rsi))parts.push('MT5 RSI14 '+fmt(snap.rsi)+' snapshot');
+    const q=sig?.q||{},mark=p.side==='BUY'?q.bid:q.ask;
+    if(q.proxyOnly&&q.fresh&&finite(p.volume)&&finite(mark)){const estimate=(p.side==='BUY'?1:-1)*(+mark-(+p.entry))*(+p.volume);parts.push('public-price P/L '+(estimate<0?'-':'')+'$'+Math.abs(estimate).toFixed(2)+' estimated')}
+    if(snap&&finite(snap.screenshotBid)&&finite(snap.screenshotAsk))parts.push('captured quote '+fmt(snap.screenshotBid)+' / '+fmt(snap.screenshotAsk)+' (snapshot only)');
+    meta.textContent=parts.join(' · ')+(p.source==='MT5 SCREENSHOT'?' · screenshot imported '+new Date(p.importedAt||Date.now()).toLocaleTimeString():' · position saved on this device');
+    document.getElementById('positionPlanStatus').textContent=finite(p.entry)?(finite(p.stop)?'Saved levels · live public BTC price is only an estimate; verify exact HOLD/EXIT in MT5.':'No SL detected. Add or verify the actual stop in MT5; Oracle will not invent one.'):'Add the actual fill and stop before relying on level checks.';
   }else{
     meta.textContent=mode==='UNKNOWN'?'Position is unknown; fresh entries are blocked until you set the status.':'Position status is manual and saved on this device.';
   }
+  const display=document.getElementById('mt5SnapshotDisplay');
+  if(display){const snap=app.mt5Snapshot;display.hidden=!snap;if(snap){display.textContent='Last MT5 screenshot · '+(snap.symbol||'BTCUSD')+' '+(snap.timeframe||'timeframe not read')+' · '+(snap.side||'position unknown')+(finite(snap.volume)?' '+fmt(snap.volume)+' lot':'')+' · RSI14 '+fmt(snap.rsi)+' · image not saved.'}}
+}
+function renderMt5ForecastContext(){
+  const el=document.getElementById('mt5ForecastContext');if(!el)return;const s=app.mt5Snapshot;
+  if(!s){el.textContent='Geen skermskoot ingevoer nie. Forecast gebruik die Oracle se vars, outomatiese BTC H1-data.';return}
+  const bars=closedBars(),oracleRsi=rsi(bars.map(x=>+x.close));
+  const parts=[(s.symbol||'BTCUSD')+' '+(s.timeframe||'MT5 chart'),finite(s.rsi)?'MT5 RSI(14) '+fmt(s.rsi)+' at screenshot':'MT5 RSI unread'];
+  if(finite(oracleRsi))parts.push('Oracle live closed-H1 RSI(14) '+fmt(oracleRsi));
+  if(s.side)parts.push(s.side+(finite(s.volume)?' '+fmt(s.volume)+' lot':'')+' entry '+fmt(s.entry));
+  if(finite(s.tp1))parts.push('TP1 '+fmt(s.tp1));
+  if(finite(s.screenshotPnl))parts.push('screenshot P/L '+(s.screenshotPnl<0?'-':'')+'$'+Math.abs(+s.screenshotPnl).toFixed(2)+' USD');
+  if(!finite(s.stop))parts.push('no SL visible; verify in MT5');
+  parts.push('snapshot context only; forecast uses the latest public closed H1 candles');
+  el.textContent=parts.join(' · ');
 }
 function directionWord(d){return d>0?'OP':d<0?'AF':'NIE DUIDELIK'}
 function renderForecastBreakdown(sig){
@@ -503,17 +614,29 @@ function renderForecastBreakdown(sig){
   if(p.counter&&dir)why.push('1H en 3H bevestig nie saam nie; die setup is vroeër/hoër risiko.');
   const w=p.p1&&sig.forward1?computeForwardForecast(closedBars()).horizons?.[1]?.validation:null;
   if(w?.modelCalls>=20&&finite(w.modelHit))why.push('Historiese walk-forward: '+Math.round(w.modelHit*100)+'% rigting-treffers in '+w.modelCalls+' directional checks; dit is nie ’n live-winsyfer nie.');
+  const radar=p.bigMove||sig.bigMoveRadar||{},radarSide=radar.dir>0?'BUY':radar.dir<0?'SELL':'—';
+  const radarText=radar.state==='ARMED'?'ARMED · '+radarSide+' · reeks is saamgetrek; wag vir ’n geslote uitbreek.':radar.state==='CONFIRMED'?'CONFIRMED · '+radarSide+' · 20H-grens, uitbreiding en hoër-tydraam-rigting stem saam.':radar.state==='RETEST_READY'?'RETEST READY · '+radarSide+' · prys is naby die gebreekte grens.':radar.state==='RETEST_ONLY'?'RETEST ONLY · '+radarSide+' · uitbreek het te ver geloop; moenie jaag nie.':radar.state==='VERIFY'?'VERIFY · '+radarSide+' · uitbreek het nog nie genoeg bevestiging nie.':radar.reason||'Geen groot-skuif-opstelling nie.';
+  document.getElementById('bigMoveStatus').textContent=radarText;
+  document.getElementById('bigMoveTrigger').textContent=finite(radar.trigger)?(radar.dir>0?'BUY bo ':'SELL onder ')+fmt(radar.trigger)+' · vorige 20H-grens '+fmt(radar.dir>0?radar.priorHigh:radar.priorLow)+(finite(radar.compressionRatio)?' · kompressie '+radar.compressionRatio.toFixed(2)+'×':''):'Geen aktiewe sneller-vlak nie.';
+  const runner=finite(p.tp3)?('TP3 gebruik die '+(p.runnerSource||'verlengde scenario')+'; dit is nie ’n waarskynlikheid nie. Ná TP2: beskerm wins en laat slegs ’n runner loop as jy reeds gedeeltelik uit is. Trail-afstand '+fmt(p.runnerTrailDistance)+' prys-eenhede (1.25 H1 ATR / minimum verspreiding); skuif die stop self in MT5 en moenie dit verbreed nie.'):'Geen bevestigde entry nie. Wanneer ’n setup geldig word, herbereken Oracle TP1–TP3 en die runner-afstand.';
+  document.getElementById('runnerPlan').textContent=runner;
+  if(radar.state==='CONFIRMED'||radar.state==='RETEST_READY')why.push('GROOT-SKUIF BEVESTIG: 20H-uitbreek plus reeks- of volume-uitbreiding en hoër-tydraam-rigting.');
+  else if(radar.state==='ARMED')why.push('GROOT-SKUIF OP WAG: kompressie is naby die 20H-grens; wag vir die geslote H1-uitbreek by die vlak hier bo.');
+  else if(radar.state==='VERIFY'||radar.state==='RETEST_ONLY')why.push(radar.reason);
   document.getElementById('forecastWhy').textContent=why.join(' ');
   const ts=app.learning.tickStats||{},ev=sig.tickEvidence||{},q=sig.q||{},matched=ev.sourceClass&&ev.sourceClass===q.sourceClass;
   const raw=Math.max(+ts.stored||0,+app.tickQuality.lastSnapshot?.rows||0),excluded=+ts.legacyExcludedOutcomes||0;
   let learn='Gestoorde rou ticks: '+raw.toLocaleString()+'; skoon, onafhanklike mock-uitkomste: '+(+ts.resolved||0)+'. Tick-leer kan net dieselfde setup én databron beïnvloed ná 12 geldige resultate.';
-  if(raw>0&&app.tickQuality.replay?.build!==BUILD)learn+=' Druk een keer “Rebuild learning from stored ticks” om die ou rou data met die nuwe fill-reëls te herleer.';
+  if(raw>0&&app.tickQuality.replay?.build!==LEARNING_BUILD)learn+=' Druk een keer “Rebuild learning from stored ticks” om die ou rou data met die nuwe fill-reëls te herleer.';
   if(matched&&ev.learning)learn+=' Huidige '+ev.strategy+'-'+(ev.dir>0?'BUY':'SELL')+' patroon: '+ev.learning.samples+'/12, '+ev.learning.state+(finite(ev.learning.expectancyR)?', gemiddeld '+ev.learning.expectancyR+'R':'')+'.';
   if(excluded)learn+=' '+excluded+' ou, oorvleuelende of ongeldige uitkomste is uit leer gehou.';
   document.getElementById('forecastLearning').textContent=learn;
   const side=dir>0?'BUY':'SELL',orderSide=dir>0?'ASK':'BID',canEnter=String(sig.action||'').includes('ENTER '+side+' NOW'),ref=p.reference||{};
   let instruction;
-  if(!dir)instruction='GEEN GAAN-IN-OPDRAG NIE. Wag vir ’n duidelike rigting en genoeg vars data. '+(sig.note||'');
+  if(radar.state==='ARMED')instruction='MOENIE NOU INGAAN NIE. '+(radar.dir>0?'BUY':'SELL')+' aktiveer eers ná ’n geslote H1-uitbreek by '+fmt(radar.trigger)+'. Scan weer met vars MT5 Bid/Ask.';
+  else if(radar.state==='VERIFY')instruction='MOENIE DIE UITBREEK JAAG NIE. Wag vir uitbreiding en hoër-tydraam-bevestiging; scan weer ná die volgende geslote H1-kers.';
+  else if(radar.state==='RETEST_ONLY')instruction='GEEN MARK-ENTRY NOU NIE. Wag vir ’n retest naby '+fmt(radar.retestPrice)+' en ’n nuwe MT5-scan.';
+  else if(!dir)instruction='GEEN GAAN-IN-OPDRAG NIE. Wag vir ’n duidelike rigting en genoeg vars data. '+(sig.note||'');
   else if(canEnter)instruction='GAAN IN '+side+' by Pepperstone MT5 '+orderSide+' '+fmt(sig.entry)+'. WRONG/SL '+fmt(sig.stop)+' · TP1 '+fmt(sig.tp1)+' · TP2 '+fmt(sig.tp2)+' · TP3 '+fmt(sig.tp3)+'. Oracle bereken nie lot-grootte nie.';
   else if(ref.proxyOnly)instruction='FORECAST '+side+', maar die prys is net ’n publieke verwysing. Maak Pepperstone MT5 oop; gebruik die huidige '+orderSide+', vul vars Bid én Ask hier bo in, tik Gebruik MT5-kwotasie en skandeer weer. Gaan net in as die kaart GAAN IN '+side+' wys; moenie ’n verskuifde entry jaag nie.';
   else instruction='FORECAST '+side+', maar tans geen entry nie: '+(app.scanError||sig.note||'kwotasie of candle-data moet eers vars en geldig wees.')+' Ververs MT5 Bid/Ask en skandeer weer.';
@@ -523,15 +646,16 @@ function renderForecastBreakdown(sig){
 }
 function render(){
   const s=getState()||{},sig=signal(),q=sig.q||{},te=app.tickEngine||seed.tickEngine,ts=app.learning.tickStats||seed.learning.tickStats,forward=computeForwardForecast(closedBars());
-  renderMarketCards(sig);renderPositionCard();renderForecastBreakdown(sig);
+  renderMarketCards(sig);renderPositionCard(sig);renderMt5ForecastContext();renderForecastBreakdown(sig);
   const pdir=sig.forecastPlan?.dir||0,side=pdir>0?'BUY':'SELL',canEnter=String(sig.action||'').includes('ENTER '+side+' NOW'),openPosition=sig.paperPosition||app.paper?.position==='OPEN';
   let headline=sig.action,pillText=sig.action,note=app.scanError||sig.note;
   if(!openPosition&&pdir){
     if(canEnter){headline='GAAN IN '+side+' · MT5';pillText='MT5-ENTRY: '+side+' · '+(pdir>0?'ASK':'BID')+' '+fmt(sig.entry);note='GAAN IN '+side+' by Pepperstone MT5 '+(pdir>0?'ASK':'BID')+' '+fmt(sig.entry)+'. WRONG/SL '+fmt(sig.stop)+' · TP1 '+fmt(sig.tp1)+' · TP2 '+fmt(sig.tp2)+' · TP3 '+fmt(sig.tp3)+'. Gaan self na dat die bedrag en stop vir jou rekening aanvaarbaar is.'}
+    else if(['ARMED','VERIFY','RETEST_ONLY'].includes(sig.forecastPlan?.bigMove?.state)){const r=sig.forecastPlan.bigMove;headline=r.state==='ARMED'?'GROOT-SKUIF ARMED · WAG':r.state==='VERIFY'?'UITBREEK · BEVESTIGING NODIG':'GROOT-SKUIF · WAG VIR RETEST';pillText=(r.state==='ARMED'?'TRIGGER ':'WAG-VLAK ')+fmt(r.trigger??r.retestPrice);note=sig.note}
     else if(String(sig.action||'').startsWith('PROXY SETUP')){headline='FORECAST '+side+' · KONTROLEER MT5';pillText='RIGTING '+side+' · MT5-KWOTASIE NODIG';note='Forecast '+side+'. Open Pepperstone MT5 en gee die huidige Bid/Ask in. Slegs die huidige MT5-prys kan die GAAN IN-opdrag aktiveer.'}
     else if(String(sig.action||'').startsWith('WAIT')){headline='FORECAST '+side+' · WAG';pillText='RIGTING '+side+' · ENTRY GEBLOK';note='Rigting '+side+' is ’n forecast, nie ’n entry nie. Rede: '+(app.scanError||sig.note||'’n datahek is nie geslaag nie.')}
   }else if(!openPosition&&!pdir&&String(sig.action||'')==='WAIT'){headline='GEEN DUIDELIKE RIGTING · WAG';pillText='GEEN BUY/SELL-ENTRY';note=app.scanError||sig.note}
-  const pill=document.getElementById('actionPill'),title=document.getElementById('actionTitle');title.textContent=headline;title.className='action-title'+(/EXIT NOW|TP[123] HIT/.test(sig.action)?' action-exit':/BUY/.test(headline)?' action-buy':/SELL/.test(headline)?' action-sell':/HOLD/.test(headline)?' action-hold':'');const urgent=/EXIT NOW|TP[123] HIT/.test(sig.action),amber=/WAIT|EARLY|PROXY|REVIEW|WAG|KONTROLEER/.test(headline+' '+sig.action),dotClass=urgent?'red':amber?'amber':'';pill.innerHTML='<i class="dot '+dotClass+'"></i> '+esc(pillText);document.getElementById('actionNote').textContent=note;
+  const pill=document.getElementById('actionPill'),title=document.getElementById('actionTitle');title.textContent=headline;title.className='action-title'+(/EXIT NOW|EXIT REVIEW|TP[123] (?:HIT|CHECK)|RISK ALERT/.test(sig.action)?' action-exit':/BUY/.test(headline)?' action-buy':/SELL/.test(headline)?' action-sell':/HOLD|RUNNER/.test(headline+' '+sig.action)?' action-hold':'');const urgent=/EXIT NOW|EXIT REVIEW|TP[123] (?:HIT|CHECK)|RISK ALERT/.test(sig.action),amber=/WAIT|EARLY|PROXY|REVIEW|WAG|KONTROLEER|STOP NOT VISIBLE|RUNNER/.test(headline+' '+sig.action),dotClass=urgent?'red':amber?'amber':'';pill.innerHTML='<i class="dot '+dotClass+'"></i> '+esc(pillText);document.getElementById('actionNote').textContent=note;
   document.getElementById('marketPrice').textContent=fmt(q.price);document.getElementById('entryPrice').textContent=fmt(sig.entry);document.getElementById('stopPrice').textContent=fmt(sig.stop);document.getElementById('tp1Price').textContent=fmt(sig.tp1);document.getElementById('tp2Price').textContent=fmt(sig.tp2);document.getElementById('tp3Price').textContent=fmt(sig.tp3);
   document.getElementById('priceHealth').textContent=sig.priceOk?'FRESH':sig.quoteFresh===false?'STALE':'UNKNOWN';document.getElementById('spreadHealth').textContent=sig.spreadOk?'VALID':'BLOCKED';document.getElementById('newsHealth').textContent='NOT USED';document.getElementById('crossHealth').textContent='NOT USED';
   const biasText=v=>v===null||v===undefined?'INSUFFICIENT':v>0?'UP':v<0?'DOWN':'FLAT';document.getElementById('f1').textContent=biasText(sig.forward1?.state==='READY'?forecastDirection(sig.forward1,.58):null);document.getElementById('f3').textContent=biasText(sig.forward3?.state==='READY'?forecastDirection(sig.forward3,.55):null);document.getElementById('f6').textContent=biasText(sig.forward6?.state==='READY'?forecastDirection(sig.forward6,.58):null);document.getElementById('ff').textContent=sig.fastDir>0?'UP':sig.fastDir<0?'DOWN':'FLAT';document.getElementById('confidence').textContent=finite(sig.confidence)?Math.round(sig.confidence)+' / 100 · heuristies':'—';document.getElementById('dataMode').textContent=sig.q?.manual?'MANUAL MT5 QUOTE · PUBLIC CANDLES':sig.q?.proxyOnly?'PUBLIC PROXY · MOCK ONLY':sig.priceOk?'FRESH QUOTE + BARS':sig.quoteFresh===false?'STALE / BLOCKED':'QUOTE UNVERIFIED';document.getElementById('conflictText').textContent=sig.fastDir&&sig.higher&&sig.fastDir!==sig.higher?'COUNTER-MOVE':'ALIGNED/UNKNOWN';
@@ -566,7 +690,8 @@ function recordScan(sig){
   if(sig.paperPosition)return;
   app.ledger.push(row);app.ledger=app.ledger.slice(-500);save(true);
 }
-async function refresh(){const btn=document.getElementById('refreshBtn');btn.disabled=true;btn.textContent='SCANNING…';app.scanError=null;try{await fetchProxyScan()}catch(e){app.scanMarket=null;app.scanError=e.message||'Live scan failed; try again.'}const sig=signal();recordScan(sig);render();btn.disabled=false;btn.textContent='SCAN BTC NOW'}
+let refreshBusy=false;
+async function refresh(){if(refreshBusy)return;refreshBusy=true;const btn=document.getElementById('refreshBtn');if(btn){btn.disabled=true;btn.textContent='SCANNING…'}app.scanError=null;try{await fetchProxyScan()}catch(e){app.scanError=e.message||'Live scan failed; try again.'}try{const sig=signal();recordScan(sig);render()}catch(e){app.scanError='Scan processing failed: '+(e.message||'unknown error');render()}finally{refreshBusy=false;if(btn){btn.disabled=false;btn.textContent='SCAN BTC NOW'}}}
 function saveManualBrokerQuote(){const bidText=document.getElementById('brokerBid').value.trim(),askText=document.getElementById('brokerAsk').value.trim(),bid=Number(bidText),ask=Number(askText);if(!bidText||!askText||!Number.isFinite(bid)||!Number.isFinite(ask)||bid<=0||ask<=bid)return alert('Enter a valid MT5 Bid and a higher Ask.');app.manualBrokerQuote={bid,ask,spread:ask-bid,updatedAt:Date.now(),source:'Pepperstone MT5 manual quote',manual:true};save(true);render()}
 function clearManualBrokerQuote(){app.manualBrokerQuote=null;document.getElementById('brokerBid').value='';document.getElementById('brokerAsk').value='';save(true);render()}
 
@@ -578,7 +703,7 @@ function validPositionPlan(side,entry,stop,targets){
 }
 function setPositionMode(mode){
   const currentPaper=app.paper||{};
-  if(mode==='FLAT'){app.paper={position:'FLAT',entry:null,side:null,stop:null,tp1:null,tp2:null,tp3:null};}
+  if(mode==='FLAT'){app.paper={position:'FLAT',entry:null,side:null,stop:null,tp1:null,tp2:null,tp3:null};app.mt5Snapshot=null;}
   else if(mode==='UNKNOWN'){
     if(currentPaper.position==='OPEN'){alert('This position is still marked open. Record its MT5 close before changing the status to UNKNOWN.');return}
     app.paper={position:'UNKNOWN',entry:null,side:null,stop:null,tp1:null,tp2:null,tp3:null};
@@ -587,7 +712,7 @@ function setPositionMode(mode){
     const side=mode;
     if(currentPaper.position==='OPEN'&&currentPaper.side===side){render();return}
     if(currentPaper.position==='OPEN'){alert('Your '+currentPaper.side+' position is still open. Mark its outcome or set FLAT after closing it before switching sides.');return}
-    app.paper={position:'OPEN',side,entry:null,stop:null,tp1:null,tp2:null,tp3:null,source:'MANUAL MT5 POSITION',openedAt:new Date().toISOString()};
+    app.paper={position:'OPEN',side,entry:null,stop:null,tp1:null,tp2:null,tp3:null,source:'MANUAL MT5 POSITION',openedAt:new Date().toISOString()};app.mt5Snapshot=null;
   }
   save(true);render();
 }
@@ -597,7 +722,8 @@ function savePositionPlan(){
   if(p.position!=='OPEN'||!['BUY','SELL'].includes(p.side)){alert('Select IN BUY or IN SELL first.');return}
   if(!validPositionPlan(p.side,entry,stop,targets)){alert('Check the plan: BUY stop must be below entry and targets above it in order; SELL stop must be above entry and targets below it in order. Enter a valid actual fill and stop.');return}
   app.paper={...p,entry,stop,tp1:targets[0],tp2:targets[1],tp3:targets[2],planUpdatedAt:new Date().toISOString()};
-  if(app.paper.source==='MANUAL MT5 POSITION'&&!app.paper.signalId){
+  if(app.paper.signalId){const existing=app.ledger.find(z=>z.id===app.paper.signalId);if(existing)Object.assign(existing,{entry,actualEntry:entry,stop,tp1:targets[0],tp2:targets[1],tp3:targets[2]})}
+  if((app.paper.source==='MANUAL MT5 POSITION'||app.paper.source==='MT5 SCREENSHOT')&&!app.paper.signalId){
     const now=Date.now(),row={id:'POS-'+now.toString(36),scannedAt:now,action:'MANUAL ENTER '+p.side,dir:p.side==='BUY'?1:-1,entry,actualEntry:entry,stop,tp1:targets[0],tp2:targets[1],tp3:targets[2],quoteSource:'Pepperstone MT5 · user declared',note:'User recorded an actual manual MT5 position and its protection plan.',status:'USER_CONFIRMED',result:'OPEN'};
     app.ledger.push(row);app.ledger=app.ledger.slice(-500);app.paper.signalId=row.id;
   }
@@ -608,8 +734,110 @@ function clearPositionPlan(){
   app.paper={...app.paper,entry:null,stop:null,tp1:null,tp2:null,tp3:null,planUpdatedAt:null};
   save(true);render();
 }
-function mark(result){const x=current();if(!x)return alert('No pending or confirmed trade is available. Scan first, then confirm the actual Pepperstone fill.');if(x.status==='CLOSED')return alert('That signal is already closed.');if(result==='ENTRY'){if(x.status==='USER_CONFIRMED')return alert('This position is already recorded. Use TP1, TP2, SL, or Expire to close its outcome.');x.status='USER_CONFIRMED';x.actualEntry=prompt('Actual fill price',String(x.entry))||x.entry;x.entryTime=Date.now();app.paper={position:'OPEN',side:x.dir>0?'BUY':'SELL',entry:+x.actualEntry,stop:x.stop,tp1:x.tp1,tp2:x.tp2,tp3:x.tp3,signalId:x.id,source:'ORACLE SIGNAL',openedAt:Date.now()};}else{const actualExit=prompt('Actual exit price (optional)',String(x.tp1||x.entry))||null;x.status='CLOSED';x.result=result;x.actualExit=actualExit?+actualExit:null;x.closedAt=new Date().toISOString();if(app.paper.position==='OPEN')app.paper={position:'FLAT',entry:null,side:null,stop:null,tp1:null,tp2:null,tp3:null};const bucket=app.learning.plans.find(z=>z.id===x.id)||{id:x.id,action:x.action,entry:x.actualEntry||x.entry,result:null};bucket.result=result==='TP1'||result==='TP2'?'WIN':result==='SL'?'LOSS':'EXPIRED';bucket.closedAt=x.closedAt;bucket.exit=x.actualExit;if(!app.learning.plans.some(z=>z.id===x.id))app.learning.plans.push(bucket)}save();render()}
+function mark(result){const x=current();if(!x)return alert('No pending or confirmed trade is available. Scan first, then confirm the actual Pepperstone fill.');if(x.status==='CLOSED')return alert('That signal is already closed.');if(result==='ENTRY'){if(x.status==='USER_CONFIRMED')return alert('This position is already recorded. Use TP1, TP2, SL, or Expire to close its outcome.');x.status='USER_CONFIRMED';x.actualEntry=prompt('Actual fill price',String(x.entry))||x.entry;x.entryTime=Date.now();app.paper={position:'OPEN',side:x.dir>0?'BUY':'SELL',entry:+x.actualEntry,stop:x.stop,tp1:x.tp1,tp2:x.tp2,tp3:x.tp3,signalId:x.id,source:'ORACLE SIGNAL',openedAt:Date.now()};}else{const actualExit=prompt('Actual exit price (optional)',String(x.tp1||x.entry))||null;x.status='CLOSED';x.result=result;x.actualExit=actualExit?+actualExit:null;x.closedAt=new Date().toISOString();if(app.paper.position==='OPEN'){app.paper={position:'FLAT',entry:null,side:null,stop:null,tp1:null,tp2:null,tp3:null};app.mt5Snapshot=null}const bucket=app.learning.plans.find(z=>z.id===x.id)||{id:x.id,action:x.action,entry:x.actualEntry||x.entry,result:null};bucket.result=result==='TP1'||result==='TP2'?'WIN':result==='SL'?'LOSS':'EXPIRED';bucket.closedAt=x.closedAt;bucket.exit=x.actualExit;if(!app.learning.plans.some(z=>z.id===x.id))app.learning.plans.push(bucket)}save();render()}
 
+let mt5OcrWorker=null,mt5OcrScriptPromise=null,pendingMt5Snapshot=null;
+function loadMt5Ocr(){
+  if(window.Tesseract?.createWorker)return Promise.resolve(window.Tesseract);
+  if(!mt5OcrScriptPromise)mt5OcrScriptPromise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';script.async=true;script.crossOrigin='anonymous';script.onload=()=>window.Tesseract?.createWorker?resolve(window.Tesseract):reject(new Error('OCR engine loaded without its worker API'));script.onerror=()=>reject(new Error('Could not load the OCR engine. Check internet access and try again.'));document.head.appendChild(script)}).catch(e=>{mt5OcrScriptPromise=null;throw e});
+  return mt5OcrScriptPromise;
+}
+function ocrNumber(raw){
+  let s=String(raw||'').trim().replace(/[^0-9,.-]/g,'');
+  if(!s)return null;
+  if(/^0[-,:]0?5$/.test(s))return 0.05;
+  if(/^\d{1,3}[-,]\d{1,5}$/.test(s)&&!s.includes('.'))s=s.replace(/[-,]/,'.');
+  else if(s.includes(',')&&s.includes('.')){if(s.lastIndexOf(',')>s.lastIndexOf('.'))s=s.replace(/\./g,'').replace(',','.');else s=s.replace(/,/g,'')}
+  else if(s.includes(',')){const p=s.split(',');s=p.length===2&&p[1].length!==3?s.replace(',','.'):s.replace(/,/g,'')}
+  const n=Number(s);return Number.isFinite(n)?n:null;
+}
+function ocrWords(tsv){
+  const lines=String(tsv||'').split(/\r?\n/),out=[];
+  for(let i=1;i<lines.length;i++){const c=lines[i].split('\t');if(c.length<12||+c[0]!==5)continue;const text=c.slice(11).join('\t').trim();if(!text)continue;out.push({page:+c[1],block:+c[2],par:+c[3],line:+c[4],word:+c[5],x:+c[6],y:+c[7],w:+c[8],h:+c[9],conf:+c[10],text})}
+  return out.filter(x=>Number.isFinite(x.x)&&Number.isFinite(x.y));
+}
+function ocrGroups(words){
+  const map=new Map();for(const w of words){const key=[w.page,w.block,w.par,w.line].join(':');if(!map.has(key))map.set(key,{key,words:[],x:Infinity,y:Infinity,bottom:0});const g=map.get(key);g.words.push(w);g.x=Math.min(g.x,w.x);g.y=Math.min(g.y,w.y);g.bottom=Math.max(g.bottom,w.y+w.h)}
+  return [...map.values()].map(g=>{g.words.sort((a,b)=>a.x-b.x);g.text=g.words.map(w=>w.text).join(' ');g.center=(g.y+g.bottom)/2;return g})
+}
+function ocrPriceWord(w){return /^\d{5,6}\.\d{2,5}$/.test(String(w.text||'').replace(/,/g,''))}
+function ocrPriceParts(w){return String(w?.text||'').replace(/,/g,'').match(/\d{5,7}\.\d{2,5}/g)||[]}
+function correctOcrQuote(w,reference){
+  const raw=String(w?.text||'').replace(/,/g,''),base=ocrNumber(raw);if(!finite(base)||!finite(reference))return base;
+  if(Math.abs(base-reference)<=Math.max(100,reference*0.04))return base;
+  const close=[];for(let d=1;d<=9;d++){const n=ocrNumber(String(d)+raw.slice(1));if(finite(n)&&Math.abs(n-reference)<=Math.max(100,reference*0.04))close.push(n)}
+  return close.length===1?close[0]:base;
+}
+function parseMt5Screenshot(text,tsv,width,height){
+  const all=String(text||''),words=ocrWords(tsv),groups=ocrGroups(words),w=+width||1290,h=+height||2796;
+  const symbol=/\bBTC\s*USD\b/i.test(all)?'BTCUSD':null,tfMatch=all.match(/\bH\s*([1-6])\b/i),timeframe=tfMatch?'H'+tfMatch[1]:null;
+  const rsiMatch=all.match(/RSI\s*\(?\s*14\s*\)?[^\d]{0,16}(\d{1,3}(?:[.,]\d{1,2})?)/i),screenRsi=rsiMatch?ocrNumber(rsiMatch[1]):null,rsiValue=finite(screenRsi)&&screenRsi>=0&&screenRsi<=100?screenRsi:null;
+  const sideLines=groups.filter(g=>g.x<w*.22&&g.y>h*.18&&g.y<h*.88&&/\b(BUY|SELL)\b/i.test(g.text)&&/\b(?:0[.,:-]0?5|0[.,:-]\d{1,3})\b/i.test(g.text));
+  const g=sideLines[0]||null,sideMatch=g?.text.match(/\b(BUY|SELL)\b/i),side=sideMatch?sideMatch[1].toUpperCase():null;
+  const volumeMatch=g?.text.match(/\b(0[.,:-]0?5|0[.,:-]\d{1,3})\b/),volume=volumeMatch?ocrNumber(volumeMatch[1]):null;
+  const anchorY=g?.center??null,nearby=words.filter(x=>anchorY!==null&&x.x<w*.72&&Math.abs((x.y+x.h/2)-anchorY)<h*.035).map(x=>x.text).join(' ');
+  const pnlSource=(g?.text||'')+' '+nearby,pnlMatch=pnlSource.match(/([~−-]?)\s*\$?\s*(\d[\d,]*\.\d{2})\s*-?\s*USD/i);
+  let screenshotPnl=null,pnlAmount=null,pnlSignKnown=false;
+  if(pnlMatch){pnlAmount=ocrNumber(pnlMatch[2]);if(finite(pnlAmount)){pnlSignKnown=!!pnlMatch[1];screenshotPnl=pnlMatch[1]?-(+pnlAmount):+pnlAmount}}
+  const priceWords=words.filter(x=>x.x+x.w>w*.80&&Math.abs((x.y+x.h/2)-(anchorY??-10000))<h*.025&&ocrPriceParts(x).length);
+  const directRefs=[];for(const x of priceWords)for(const raw of ocrPriceParts(x)){const whole=raw.split('.')[0];if(whole.length===5||whole.length===6)directRefs.push({value:ocrNumber(raw),y:x.y+x.h/2,raw})}
+  const uniquePrices=[];for(const x of priceWords){for(const raw of ocrPriceParts(x)){let value=ocrNumber(raw);const whole=raw.split('.')[0];if(whole.length>5){const shortened=ocrNumber(raw.slice(1));const refs=directRefs.filter(r=>r.raw!==raw&&finite(r.value)).sort((a,b)=>Math.abs(a.y-(x.y+x.h/2))-Math.abs(b.y-(x.y+x.h/2)));if(refs[0]&&finite(shortened)&&Math.abs(shortened-refs[0].value)<=Math.max(100,refs[0].value*.04)&&Math.abs(value-refs[0].value)>Math.max(100,refs[0].value*.04))value=shortened;else if(!refs.length||Math.abs(value-refs[0].value)>Math.max(100,refs[0].value*.04))continue}if(finite(value)&&!uniquePrices.some(q=>Math.abs(q.value-value)<.01))uniquePrices.push({value,y:x.y+x.h/2,conf:x.conf})}}
+  uniquePrices.sort((a,b)=>Math.abs(a.y-(anchorY??0))-Math.abs(b.y-(anchorY??0)));
+  let entry=null,stop=null,tp1=null,tp2=null,tp3=null;
+  const picked=uniquePrices.slice(0,3).sort((a,b)=>a.value-b.value);
+  if(side&&picked.length===2){entry=side==='BUY'?picked[0].value:picked[1].value;tp1=side==='BUY'?picked[1].value:picked[0].value}
+  else if(side&&picked.length>=3){if(side==='BUY'){stop=picked[0].value;entry=picked[1].value;tp1=picked[2].value}else{tp1=picked[0].value;entry=picked[1].value;stop=picked[2].value}}
+  const reference=finite(entry)&&finite(tp1)?(entry+tp1)/2:entry;
+  const topPrices=words.filter(x=>x.y<h*.18&&x.conf>10&&ocrPriceWord(x));
+  const rawBid=topPrices.filter(x=>x.x<w*.40).sort((a,b)=>a.x-b.x)[0]||null,rawAsk=topPrices.filter(x=>x.x>w*.60).sort((a,b)=>a.x-b.x)[0]||null;
+  let screenshotBid=correctOcrQuote(rawBid,reference),screenshotAsk=correctOcrQuote(rawAsk,reference);
+  if(!finite(screenshotBid)||!finite(screenshotAsk)||screenshotAsk<=screenshotBid||screenshotAsk-screenshotBid>25){screenshotBid=null;screenshotAsk=null}
+  const corrected=!!((rawBid&&finite(screenshotBid)&&Math.abs(screenshotBid-ocrNumber(rawBid.text))>0.01)||(rawAsk&&finite(screenshotAsk)&&Math.abs(screenshotAsk-ocrNumber(rawAsk.text))>0.01));
+  if(!pnlSignKnown&&finite(pnlAmount)&&finite(screenshotBid)&&finite(entry)){const mark=(screenshotBid+(screenshotAsk||screenshotBid))/2;screenshotPnl=(side==='BUY'?1:-1)*(mark-entry)<0?-(+pnlAmount):+pnlAmount}
+  const validPrices=finite(entry)&&entry>1000&&entry<1000000;
+  return{symbol,timeframe,side,volume,entry,stop,tp1,tp2,tp3,screenshotPnl,pnlAmount,pnlSignKnown,rsi:rsiValue,screenshotBid,screenshotAsk,screenshotSpread:finite(screenshotBid)&&finite(screenshotAsk)?screenshotAsk-screenshotBid:null,quoteCorrected:corrected,tradeRows:sideLines.length,valid:!!(symbol==='BTCUSD'&&side&&finite(volume)&&validPrices),ocrText:all};
+}
+function renderMt5Preview(s){
+  const box=document.getElementById('mt5ImportPreview'),readout=document.getElementById('mt5ImportReadout'),warning=document.getElementById('mt5ImportWarnings'),apply=document.getElementById('applyMt5SnapshotBtn');
+  const cells=[['Instrument / chart',(s.symbol||'Not read')+' · '+(s.timeframe||'timeframe not read')],['Open position',(s.side||'Not read')+(finite(s.volume)?' · '+fmt(s.volume)+' lot':'')],['Entry',fmt(s.entry)],['Stop-loss',finite(s.stop)?fmt(s.stop):'NOT VISIBLE'],['Take-profit',fmt(s.tp1)],['Floating P/L',finite(s.screenshotPnl)?(s.screenshotPnl<0?'-':'')+'$'+Math.abs(+s.screenshotPnl).toFixed(2)+' USD':finite(s.pnlAmount)?'$'+(+s.pnlAmount).toFixed(2)+' USD · sign unclear':'Not read'],['MT5 Bid / Ask snapshot',finite(s.screenshotBid)?fmt(s.screenshotBid)+' / '+fmt(s.screenshotAsk):'Unclear; not imported'],['H1 RSI(14)',finite(s.rsi)?fmt(s.rsi):'Not read']];
+  readout.innerHTML=cells.map(x=>'<div class="mt5-read"><small>'+esc(x[0])+'</small><b>'+esc(x[1])+'</b></div>').join('');
+  const notes=[];if(!finite(s.stop))notes.push('No stop-loss was detected. Check it directly in MT5; Oracle will not guess a stop.');if(s.quoteCorrected)notes.push('Some screenshot quote digits were OCR-ambiguous and cross-checked against the entry/TP range. They remain snapshot-only.');if(!finite(s.tp1))notes.push('No take-profit was read.');if(s.tradeRows>1)notes.push('More than one open trade row was detected; load is blocked so positions are not mixed.');notes.push('Screenshot values are a snapshot. The app will fetch live public BTC data; it does not connect to your Pepperstone account or place orders.');
+  warning.textContent=notes.join(' ');box.hidden=false;apply.disabled=!s.valid||s.tradeRows>1;
+  if(!s.valid)warning.textContent='Could not confidently read one BTCUSD open BUY/SELL position and its lot size. Nothing will be imported. '+warning.textContent;
+}
+function readMt5ImageSize(file){
+  return new Promise((resolve,reject)=>{const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{const size={width:img.naturalWidth,height:img.naturalHeight};URL.revokeObjectURL(url);resolve(size)};img.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Could not open this image.'))};img.src=url});
+}
+async function processMt5Screenshot(file){
+  const status=document.getElementById('mt5OcrStatus'),preview=document.getElementById('mt5ImportPreview'),button=document.getElementById('readMt5ScreenshotBtn');
+  if(!file||!String(file.type||'').startsWith('image/')){status.textContent='Choose an MT5 screenshot image.';return}
+  if(file.size>20000000){status.textContent='Image is too large. Choose a normal phone screenshot under 20 MB.';return}
+  button.disabled=true;button.textContent='READING SCREEN…';preview.hidden=true;pendingMt5Snapshot=null;
+  try{
+    const api=await loadMt5Ocr();
+    if(!mt5OcrWorker)mt5OcrWorker=await api.createWorker('eng',1,{logger:m=>{if(m?.status==='recognizing text')status.textContent='Reading screenshot on this phone… '+Math.round((m.progress||0)*100)+'%';else if(m?.status)status.textContent='Loading OCR: '+m.status}});
+    status.textContent='Reading screenshot on this phone…';
+    const [result,size]=await Promise.all([mt5OcrWorker.recognize(file,{}, {text:true,tsv:true}),readMt5ImageSize(file)]);
+    pendingMt5Snapshot=parseMt5Screenshot(result?.data?.text||'',result?.data?.tsv||'',size.width,size.height);
+    renderMt5Preview(pendingMt5Snapshot);
+    status.textContent=pendingMt5Snapshot.valid?'Screenshot read. Review the values, then load this position.':'Screenshot read, but the key position fields were unclear. Nothing was loaded.';
+  }catch(e){status.textContent='Screenshot reading failed: '+(e?.message||'try again with a clearer MT5 screen.');console.error('MT5 screenshot OCR failed',e)}
+  finally{button.disabled=false;button.textContent='READ MT5 SCREENSHOT'}
+}
+function applyMt5ScreenshotSnapshot(){
+  const s=pendingMt5Snapshot;if(!s?.valid||s.tradeRows>1)return;
+  const prev=app.paper||{},same=prev.position==='OPEN'&&prev.side===s.side&&finite(prev.entry)&&Math.abs(+prev.entry-(+s.entry))<=5;
+  if(prev.position==='OPEN'&&!same){alert('Oracle already has a different open position saved. Confirm it is closed in MT5 and mark it FLAT before importing another position.');return}
+  const now=Date.now(),paper={...prev,position:'OPEN',side:s.side,entry:s.entry,stop:finite(s.stop)?s.stop:(same&&finite(prev.stop)?prev.stop:null),tp1:finite(s.tp1)?s.tp1:(same?prev.tp1:null),tp2:finite(s.tp2)?s.tp2:(same?prev.tp2:null),tp3:finite(s.tp3)?s.tp3:(same?prev.tp3:null),volume:s.volume,snapshotPnl:s.screenshotPnl,source:'MT5 SCREENSHOT',importedAt:now,openedAt:same?(prev.openedAt||now):now};
+  let row=paper.signalId?app.ledger.find(x=>x.id===paper.signalId):null;
+  if(!row){row={id:'MT5-SCREEN-'+now.toString(36),scannedAt:now,action:'SCREENSHOT OPEN '+s.side,dir:s.side==='BUY'?1:-1,entry:s.entry,actualEntry:s.entry,stop:paper.stop,tp1:paper.tp1,tp2:paper.tp2,tp3:paper.tp3,quoteSource:'MT5 screenshot · user confirmed',note:'Position fields were OCR-read from a screenshot and confirmed by the user. No broker API connection was used.',status:'USER_CONFIRMED',result:'OPEN'};app.ledger.push(row);app.ledger=app.ledger.slice(-500);paper.signalId=row.id}
+  else Object.assign(row,{action:'SCREENSHOT OPEN '+s.side,dir:s.side==='BUY'?1:-1,entry:s.entry,actualEntry:s.entry,stop:paper.stop,tp1:paper.tp1,tp2:paper.tp2,tp3:paper.tp3,quoteSource:'MT5 screenshot · user confirmed',status:'USER_CONFIRMED',result:'OPEN'});
+  Object.assign(row,{volume:s.volume,screenshotPnl:s.screenshotPnl,updatedAt:new Date(now).toISOString()});
+  app.paper=paper;app.mt5Snapshot={...s,ocrText:undefined,importedAt:now};pendingMt5Snapshot=null;
+  document.getElementById('mt5ImportPreview').hidden=true;document.getElementById('mt5OcrStatus').textContent='Position loaded: '+s.side+' '+fmt(s.volume)+' lot · entry '+fmt(s.entry)+'. Oracle is scanning live public BTC prices; verify the broker position in MT5.';
+  save(true);render();refresh();
+}
+function discardMt5Screenshot(){pendingMt5Snapshot=null;document.getElementById('mt5ImportPreview').hidden=true;document.getElementById('mt5OcrStatus').textContent='Screenshot preview discarded; no position was changed.'}
 function idb(){return new Promise((resolve,reject)=>{if(!window.indexedDB)return reject(new Error('IndexedDB is unavailable'));const r=indexedDB.open(TICK_DB,TICK_DB_VERSION);r.onupgradeneeded=()=>{const db=r.result,tx=r.transaction;let os;if(!db.objectStoreNames.contains('ticks'))os=db.createObjectStore('ticks',{keyPath:'id'});else os=tx.objectStore('ticks');if(!os.indexNames.contains('byTime'))os.createIndex('byTime','time',{unique:false});if(!os.indexNames.contains('byFingerprint'))os.createIndex('byFingerprint','fingerprint',{unique:false})};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error||new Error('IndexedDB open failed'))})}
 async function storeTicks(rows){let db=null;try{db=await idb();for(let start=0;start<rows.length;start+=5000){const batch=rows.slice(start,start+5000),tx=db.transaction('ticks','readwrite'),os=tx.objectStore('ticks');batch.forEach(x=>os.put(x));await new Promise((res,rej)=>{tx.oncomplete=res;tx.onerror=()=>rej(tx.error||new Error('Tick transaction failed'));tx.onabort=()=>rej(tx.error||new Error('Tick transaction aborted'))})}return await new Promise((res,rej)=>{const tx=db.transaction('ticks','readonly'),req=tx.objectStore('ticks').count();req.onsuccess=()=>res(req.result);req.onerror=()=>rej(req.error||new Error('Tick count failed'))})}catch(e){return null}finally{try{db?.close()}catch(ignore){}}}
 function num(x){if(x===null||x===undefined)return null;let s=String(x).trim().replace(/^"|"$/g,'').replace(/\s/g,'');if(!s||s==='-'||s==='—')return null;if(s.includes(',')&&s.includes('.')){if(s.lastIndexOf(',')>s.lastIndexOf('.'))s=s.replace(/\./g,'').replace(',','.');else s=s.replace(/,/g,'')}else if(s.includes(',')){const p=s.split(',');s=p.length===2&&p[1].length!==3?s.replace(',','.'):s.replace(/,/g,'')}const n=Number(s);return Number.isFinite(n)?n:null}
@@ -735,6 +963,8 @@ function summarizeTickPackage(p,filename=''){
   const wins=n(stats.wins)||0,losses=n(stats.losses)||0,expired=n(stats.expired)||0;
   const outcomeCount=wins+losses+expired,known=wins+losses;
   const buckets=arr(p.tickOutcomes),maxBucketSamples=Math.max(0,...buckets.map(x=>n(x?.samples)||0));
+  const excursions=arr(p.resolvedSample).filter(x=>x&&finite(x.mfe)&&finite(x.riskDist)&&+x.riskDist>0),moveExcursions15=excursions.filter(x=>+x.mfe/+x.riskDist>=1.5).length;
+  const firstTime=n(snapshot.firstTime),lastTime=n(snapshot.lastTime),durationHours=firstTime!==null&&lastTime!==null&&lastTime>=firstTime?(lastTime-firstTime)/3600000:null;
   return{
     filename:String(filename||'Uploaded JSON').slice(0,180),build:String(p.build||'Unknown build').slice(0,120),
     instrument:String(p.instrument||'Unknown instrument').slice(0,40),createdAt:String(p.createdAt||'Unknown').slice(0,40),
@@ -743,8 +973,8 @@ function summarizeTickPackage(p,filename=''){
     inputRows:n(stats.inputRows),uniqueRows:n(stats.unique),learningRows:n(stats.learningRows),
     unchangedQuotes:n(quality.unchangedQuotes),learningSkipped:n(quality.learningSkipped),
     invalidRows:n(quality.invalidRows),duplicateRows:n(quality.duplicateRows),crossBatchDuplicates:n(quality.crossBatchDuplicates),
-    gaps:n(quality.gaps),gapClosed:n(stats.gapClosed),wins,losses,expired,outcomeCount,winRate:known?wins/known:null,
-    sumR:n(stats.sumR),bucketCount:buckets.length,maxBucketSamples
+    gaps:n(quality.gaps),gapClosed:n(stats.gapClosed),syntheticLast:n(quality.syntheticLast),wins,losses,expired,outcomeCount,winRate:known?wins/known:null,
+    sumR:n(stats.sumR),bucketCount:buckets.length,maxBucketSamples,excursionSample:excursions.length,moveExcursions15,durationHours
   };
 }
 function renderSummaryAudit(){
@@ -759,7 +989,9 @@ function renderSummaryAudit(){
     '<div class="row"><span>Wins / losses · raw win rate</span><b>'+fmt(a.wins)+' / '+fmt(a.losses)+' · '+pct+'</b></div>'+
     '<div class="row"><span>Setup buckets · largest bucket</span><b>'+fmt(a.bucketCount)+' · '+fmt(a.maxBucketSamples)+'</b></div>'+
     '<div class="row"><span>Learning rows / unchanged quotes</span><b>'+fmt(a.learningRows)+' / '+fmt(a.unchangedQuotes)+'</b></div>'+
-    '<p class="warntext">NOT VALIDATED. Summary metrics are not a forecast test or account-level profit curve. Raw tick CSV is required for independent replay; commissions, slippage, latency and overlapping mock trades must also be accounted for.</p>'+
+    '<div class="row"><span>Favorable excursions ≥1.5R</span><b>'+fmt(a.moveExcursions15)+' / '+fmt(a.excursionSample)+'</b></div>'+
+    '<div class="row"><span>Synthetic Last ticks / gaps</span><b>'+fmt(a.syntheticLast)+' / '+fmt(a.gaps)+'</b></div>'+
+    '<p class="warntext">NOT VALIDATED. '+(a.excursionSample?'This sample shows '+fmt(a.moveExcursions15)+' of '+fmt(a.excursionSample)+' resolved mock positions reaching 1.5R favorable excursion':'No resolved excursion sample is available')+(a.durationHours!==null?' in about '+a.durationHours.toFixed(1)+' hours':'')+'. It does not prove big-move capture or an account-level profit curve. Ticks with synthetic Last values are not exchange trades; commissions, extra slippage, latency and overlap also remain unmodeled.</p>'+
     '<p class="muted">Read-only: this audit does not import outcomes, update the brain, or place orders.</p>';
 }
 async function importTickSummaryFile(f){
@@ -772,8 +1004,18 @@ async function importTickSummaryFile(f){
 function isTickSummary(p){return !!(p&&typeof p==='object'&&p.tickStats&&p.tickQuality&&(p.integrity||p.resolvedSample||p.build))}
 
 function importBrain(f){f.text().then(text=>{try{const p=JSON.parse(text);if(isTickSummary(p)){const audit=summarizeTickPackage(p,f.name||'Uploaded JSON');if(!audit)return alert('This JSON could not be recognized as a tick summary. No learning or brain data was changed.');app.summaryAudit=audit;save(true);render();alert('Tick summary recognized and audited read-only. No learning or brain data was changed.');return}if(p?.tickEngine&&p?.learning){app=normalizeApp(p);repairTickLearning();app.meta.integrityRepair='R6.16.2';save(true);render();alert('Complete Oracle snapshot imported. Eligible tick outcomes were rechecked; raw IndexedDB ticks on this device were left untouched.');return}const candidate=p.brain||p;app.brain=clone(candidate);save(true);render();alert('Forecast brain imported. Existing tick outcomes and raw ticks were preserved.')}catch(e){alert('Invalid brain JSON: '+e.message)}})}
-async function rebuildTickLearning(){if(phoneRunning)return alert('Stop the phone feed before rebuilding so the replay has a stable endpoint.');if(!confirm('This rebuilds only tick mock learning from every raw row in IndexedDB. It replaces current tick mock outcomes. Your raw ticks, imported forecast brain, manual ledger and other learning remain. A JSON backup will download first. Continue?'))return;let previous=null;try{const snap=await readRawSnapshot();if(!snap.rows.length)return alert('No stored raw ticks are available to rebuild.');previous=clone(app);const backup=clone(app);backup.rawTicksIncluded=false;backup.note='Pre-rebuild backup. Raw ticks remain in IndexedDB; mock tick outcomes are about to be rebuilt from the stored rows.';download(new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),'BTC_ORACLE_R6_16_2_PRE_REBUILD_BACKUP.json');const oldStats=clone(app.learning.tickStats),oldQuality=clone(app.tickQuality),unique=uniqueWindow(snap.rows),duplicateRows=snap.rows.length-unique.length;app.learning.tickOutcomes=[];app.learning.tickStats=Object.assign(clone(seed.learning.tickStats),{stored:snap.rows.length,duplicates:duplicateRows});app.tickEngine=Object.assign(clone(seed.tickEngine),{source:'REPLAY · IndexedDB'});app._tickWindow=[];app.tickQuality=Object.assign(clone(seed.tickQuality),{lastSnapshot:snap.snapshot,duplicateRows,replay:{startedAt:new Date().toISOString(),snapshotId:snap.snapshot.snapshotId,rawRows:snap.rows.length,uniqueRows:unique.length,duplicateRows,priorResolved:oldStats.resolved||0,priorInputRows:oldStats.inputRows||0,completed:false,processedRows:0}});app.meta.integrityRepair='R6.16.2';app.meta.learningRCap=LEARNING_R_CAP;const chunkSize=5000;for(let start=0;start<unique.length;start+=chunkSize){const chunk=unique.slice(start,start+chunkSize),q=emptyQuality();q.inputRows=chunk.length;q.parsedRows=chunk.length;q.duplicateRows=0;q.syntheticLast=chunk.filter(x=>x.lastSynthetic).length;q.firstTime=chunk[0]?.time||null;q.lastTime=chunk.at(-1)?.time||null;await ingest({rows:chunk,quality:q,batchId:'REPLAY-'+snap.snapshot.snapshotId+'-'+start},'REPLAY · IndexedDB');app.tickQuality.replay.processedRows=Math.min(unique.length,start+chunk.length);if(start%20000===0){render();await new Promise(resolve=>setTimeout(resolve,0))}}app.tickQuality.replay.completed=true;app.tickQuality.replay.completedAt=new Date().toISOString();app.tickQuality.replay.build=BUILD;app.tickQuality.replay.priorQuality={inputRows:oldQuality.inputRows||0,lateRows:oldQuality.lateRows||0,acceptedRows:oldQuality.acceptedRows||0};save(true);render();alert(`Rebuild complete: ${unique.length.toLocaleString()} unique source-aware rows replayed from ${snap.rows.toLocaleString()} stored rows. ${duplicateRows.toLocaleString()} duplicate rows were skipped; ${app.learning.tickStats.resolved.toLocaleString()} outcomes are now recorded.`)}catch(e){if(previous){app=normalizeApp(previous);save(true);render()}alert('Rebuild failed. Previous mock learning was restored; raw ticks were not removed. '+e.message)}}
+async function rebuildTickLearning(){if(phoneRunning)return alert('Stop the phone feed before rebuilding so the replay has a stable endpoint.');if(!confirm('This rebuilds only tick mock learning from every raw row in IndexedDB. It replaces current tick mock outcomes. Your raw ticks, imported forecast brain, manual ledger and other learning remain. A JSON backup will download first. Continue?'))return;let previous=null;try{const snap=await readRawSnapshot();if(!snap.rows.length)return alert('No stored raw ticks are available to rebuild.');previous=clone(app);const backup=clone(app);backup.rawTicksIncluded=false;backup.note='Pre-rebuild backup. Raw ticks remain in IndexedDB; mock tick outcomes are about to be rebuilt from the stored rows.';download(new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),'BTC_ORACLE_R6_16_2_PRE_REBUILD_BACKUP.json');const oldStats=clone(app.learning.tickStats),oldQuality=clone(app.tickQuality),unique=uniqueWindow(snap.rows),duplicateRows=snap.rows.length-unique.length;app.learning.tickOutcomes=[];app.learning.tickStats=Object.assign(clone(seed.learning.tickStats),{stored:snap.rows.length,duplicates:duplicateRows});app.tickEngine=Object.assign(clone(seed.tickEngine),{source:'REPLAY · IndexedDB'});app._tickWindow=[];app.tickQuality=Object.assign(clone(seed.tickQuality),{lastSnapshot:snap.snapshot,duplicateRows,replay:{startedAt:new Date().toISOString(),snapshotId:snap.snapshot.snapshotId,rawRows:snap.rows.length,uniqueRows:unique.length,duplicateRows,priorResolved:oldStats.resolved||0,priorInputRows:oldStats.inputRows||0,completed:false,processedRows:0}});app.meta.integrityRepair='R6.16.2';app.meta.learningRCap=LEARNING_R_CAP;const chunkSize=5000;for(let start=0;start<unique.length;start+=chunkSize){const chunk=unique.slice(start,start+chunkSize),q=emptyQuality();q.inputRows=chunk.length;q.parsedRows=chunk.length;q.duplicateRows=0;q.syntheticLast=chunk.filter(x=>x.lastSynthetic).length;q.firstTime=chunk[0]?.time||null;q.lastTime=chunk.at(-1)?.time||null;await ingest({rows:chunk,quality:q,batchId:'REPLAY-'+snap.snapshot.snapshotId+'-'+start},'REPLAY · IndexedDB');app.tickQuality.replay.processedRows=Math.min(unique.length,start+chunk.length);if(start%20000===0){render();await new Promise(resolve=>setTimeout(resolve,0))}}app.tickQuality.replay.completed=true;app.tickQuality.replay.completedAt=new Date().toISOString();app.tickQuality.replay.build=LEARNING_BUILD;app.tickQuality.replay.priorQuality={inputRows:oldQuality.inputRows||0,lateRows:oldQuality.lateRows||0,acceptedRows:oldQuality.acceptedRows||0};save(true);render();alert(`Rebuild complete: ${unique.length.toLocaleString()} unique source-aware rows replayed from ${snap.rows.toLocaleString()} stored rows. ${duplicateRows.toLocaleString()} duplicate rows were skipped; ${app.learning.tickStats.resolved.toLocaleString()} outcomes are now recorded.`)}catch(e){if(previous){app=normalizeApp(previous);save(true);render()}alert('Rebuild failed. Previous mock learning was restored; raw ticks were not removed. '+e.message)}}
 function resolverCheck(){const ts=app.learning.tickStats,open=app.tickEngine.open.length;if(!app.tickEngine.ticks)return alert('Import eers MT5 ticks.');render();alert(`Resolver check complete. ${open} mock position(s) remain open; ${ts.resolved||0} outcome(s) are recorded; ${ts.gapClosed||0} gap-closed position(s) were excluded from learning. No duplicate replay was run.`)}
+function bigMoveSelfTest(){
+  const up1={state:'READY',upShare:.68,medianBps:80,q10Bps:-35,q90Bps:150,n:32},up3={state:'READY',upShare:.65,medianBps:170,q10Bps:-65,q90Bps:330,n:32},up6={state:'READY',upShare:.64,medianBps:300,q10Bps:-110,q90Bps:620,n:32};
+  const dn1={state:'READY',upShare:.32,medianBps:-80,q10Bps:-150,q90Bps:35,n:32},dn3={state:'READY',upShare:.35,medianBps:-170,q10Bps:-330,q90Bps:65,n:32},dn6={state:'READY',upShare:.36,medianBps:-300,q10Bps:-620,q90Bps:110,n:32};
+  const makeBars=(mode,dir=1)=>{const x=Array.from({length:60},(_,i)=>({time:Date.now()-(60-i)*3600000,open:100,high:100.1,low:99.9,close:100,volume:100,isOpen:false}));if(mode==='coil'){for(let i=53;i<59;i++)x[i]={...x[i],open:100.02,high:100.06,low:99.96,close:100.05};x[59]={...x[59],open:100.04,high:100.09,low:99.98,close:dir>0?100.07:99.93}}else if(mode==='break'){x[59]=dir>0?{...x[59],open:100,high:101,low:99.9,close:100.95,volume:160}:{...x[59],open:100,high:100.1,low:99,close:99.05,volume:160}}else if(mode==='retest'||mode==='invalidated'){x[58]={...x[58],open:100,high:101,low:99.9,close:100.95,volume:160};x[59]=mode==='retest'?{...x[59],open:100.14,high:100.18,low:100.07,close:100.08,volume:100}:{...x[59],open:100,high:100.03,low:99.85,close:99.9,volume:100}}else if(mode==='weak'){x[59]={...x[59],open:100.11,high:100.14,low:100.10,close:100.14,volume:100}}return x};
+  const qUp={price:100.13,bid:100.12,ask:100.14,spread:.02,source:'Pepperstone MT5 manual quote',sourceClass:'PEPPERSTONE_MT5',fresh:true,quoteValid:true,manual:true},qDn={price:99.88,bid:99.87,ask:99.89,spread:.02,source:'Pepperstone MT5 manual quote',sourceClass:'PEPPERSTONE_MT5',fresh:true,quoteValid:true,manual:true};
+  const armed=detectBigMoveRadar(makeBars('coil'),up1,up3,up6,{spread:.02}),long=detectBigMoveRadar(makeBars('break',1),up1,up3,up6,{spread:.02}),short=detectBigMoveRadar(makeBars('break',-1),dn1,dn3,dn6,{spread:.02}),verify=detectBigMoveRadar(makeBars('weak'),up1,up3,up6,{spread:.02}),retest=detectBigMoveRadar(makeBars('retest'),up1,up3,up6,{...qUp,price:100.1}),invalidated=detectBigMoveRadar(makeBars('invalidated'),up1,up3,up6,{...qUp,price:99.9});
+  const buy=buildForecastPlan(up1,up3,up6,{modelCalls:0},qUp,makeBars('break',1),1,1,55),sell=buildForecastPlan(dn1,dn3,dn6,{modelCalls:0},qDn,makeBars('break',-1),-1,-1,45),chase=buildForecastPlan(up1,up3,up6,{modelCalls:0},{...qUp,price:102,bid:101.99,ask:102.01},makeBars('break',1),1,1,55);
+  const savedPaper=app.paper;app.paper={position:'OPEN',side:'BUY',entry:100,stop:95,tp1:102,tp2:104,tp3:110};const runnerAlert=manageOpenPosition({dir:1,q:{bid:105,ask:105.05,spread:.05,fresh:true,quoteValid:true,manual:true,sourceClass:'PEPPERSTONE_MT5'},runnerTrailPrice:103},[]);app.paper=savedPaper;
+  return{passed:armed.state==='ARMED'&&armed.dir===1&&long.state==='CONFIRMED'&&short.state==='CONFIRMED'&&verify.state==='VERIFY'&&retest.state==='RETEST_READY'&&retest.ageBars===1&&!invalidated.breakoutConfirmed&&buy.dir===1&&buy.entry===qUp.ask&&buy.tp1<buy.tp2&&buy.tp2<buy.tp3&&buy.runnerHorizon===6&&sell.dir===-1&&sell.entry===qDn.bid&&sell.tp1>sell.tp2&&sell.tp2>sell.tp3&&chase.bigMove.state==='RETEST_ONLY'&&runnerAlert.action==='RUNNER · TRAIL REVIEW',armed:armed.state,long:long.state,short:short.state,weakBreak:verify.state,recentRetest:retest.state,invalidatedBreak:invalidated.state,runnerLadder:buy.tp1<buy.tp2&&buy.tp2<buy.tp3,sellLadder:sell.tp1>sell.tp2&&sell.tp2>sell.tp3,noChase:chase.bigMove.state==='RETEST_ONLY',runnerAlert:runnerAlert.action};
+}
 function selfTest(){
   const sample='time_msc,bid,ask,last,volume\n1790589600000,100,100.50,0,0\n1790589601000,100.10,100.60,0,0\n1790589602000,100.20,100.70,0,0',p=parseTicks(sample),midOk=Math.abs(p.rows[0].last-100.25)<.000001;
   const sourceParsed=parseTicks('time,bid,ask,last,volume,spread,source\n1790589600000,100,100.05,100.02,1,0.05,Binance public BTCUSD proxy'),sourcePreserved=sourceParsed.rows[0]?.source==='Binance public BTCUSD proxy'&&classifySource(sourceParsed.rows[0].source)==='PUBLIC_PROXY';
@@ -782,7 +1024,10 @@ function selfTest(){
   const bars=Array.from({length:70},(_,i)=>{const close=100+i*.2;return{time:Date.now()-(70-i)*3600000,open:close-.1,high:close+.15,low:close-.15,close,isOpen:false}}),q={price:101,bid:100.95,ask:101,spread:.05,source:'Pepperstone MT5 manual quote',sourceClass:'PEPPERSTONE_MT5',fresh:true,quoteValid:true,proxyOnly:false,manual:true},buy=buildForecastPlan({state:'READY',upShare:.72,medianBps:85,n:32},{state:'READY',upShare:.65,medianBps:55,n:32},{state:'READY',upShare:.62,medianBps:40,n:32},{modelCalls:0},q,bars,1,1,55),sell=buildForecastPlan({state:'READY',upShare:.28,medianBps:-85,n:32},{state:'READY',upShare:.35,medianBps:-55,n:32},{state:'READY',upShare:.38,medianBps:-40,n:32},{modelCalls:0},q,bars,-1,-1,45),forecastPlans=buy.dir===1&&buy.entry===q.ask&&buy.stop<buy.entry&&buy.entry<buy.tp1&&buy.tp1<buy.tp2&&buy.tp2<buy.tp3&&sell.dir===-1&&sell.entry===q.bid&&sell.stop>sell.entry&&sell.entry>sell.tp1&&sell.tp1>sell.tp2&&sell.tp2>sell.tp3;
   const outcome=(id,start,end,sourceClass,fillModel='LIMIT_TP_STOP_MARKET_V2')=>({id,entryTime:start,closedAt:end,dir:1,entry:100,exit:101,pnl:1,rawR:1,result:'WIN',exitReason:'TAKE_PROFIT_LIMIT',fillModel,sourceClass,strategy:'momentum',regime:'NORMAL',features:{hour:1,spreadRatio:1,volatility:.1,atr:.2}}),independent=independentLearningOutcomes([outcome('mt5-a',100,200,'PEPPERSTONE_MT5'),outcome('mt5-overlap',150,250,'PEPPERSTONE_MT5'),outcome('proxy',120,240,'PUBLIC_PROXY'),outcome('legacy',260,300,'PEPPERSTONE_MT5',null)]),overlapQuarantine=independent.length===2&&independent.some(x=>x.id==='mt5-a')&&!independent.some(x=>x.id==='mt5-overlap')&&independent.some(x=>x.id==='proxy');
   const positionPlans=validPositionPlan('BUY',100,95,[105,110,115])&&validPositionPlan('SELL',100,105,[95,90,85])&&!validPositionPlan('BUY',100,105,[110,115,120]);
-  return{passed:p.rows.length===3&&p.rows[0].time<p.rows[2].time&&Math.abs(p.rows[0].spread-.5)<.000001&&midOk&&p.rows.every(x=>x.validForExecution)&&sourcePreserved&&summaryMismatchDetected&&forecastDirections&&forecastPlans&&overlapQuarantine&&positionPlans,rows:p.rows.length,syntheticLast:p.quality.syntheticLast,sourcePreserved,summaryMismatchDetected,forecastDirections,forecastPlans,overlapQuarantine,positionPlans,checkedAt:new Date().toISOString()}
+  const mt5Fixture='level\tpage_num\tblock_num\tpar_num\tline_num\tword_num\tleft\ttop\twidth\theight\tconf\ttext\n5\t1\t2\t1\t1\t1\t15\t454\t144\t27\t92\tBTCUSD\n5\t1\t2\t1\t2\t1\t204\t455\t36\t25\t92\tH1\n5\t1\t2\t4\t1\t1\t1\t835\t82\t55\t63\tBUY\n5\t1\t2\t4\t1\t2\t96\t865\t84\t25\t78\t0-05;\n5\t1\t2\t4\t1\t3\t198\t868\t414\t25\t60\t~13.36-USD\n5\t1\t2\t4\t1\t4\t1103\t856\t162\t24\t91\t86733.87\n5\t1\t2\t5\t1\t1\t1\t870\t53\t49\t27\tPBR\n5\t1\t2\t5\t1\t2\t1103\t889\t169\t22\t85\t86679.62\n5\t1\t8\t1\t2\t1\t15\t2342\t123\t30\t91\tRSI(14)\n5\t1\t8\t1\t2\t2\t158\t2342\t95\t24\t96\t63.09';
+  const mt5=parseMt5Screenshot('BTCUSD H1 BUY 0-05; ~13.36-USD 86733.87 86679.62 RSI(14) 63.09',mt5Fixture,1290,2796),screenshotImport=mt5.valid&&mt5.side==='BUY'&&mt5.volume===.05&&mt5.entry===86679.62&&mt5.tp1===86733.87&&mt5.stop===null&&mt5.screenshotPnl===-13.36&&mt5.rsi===63.09;
+  const moveTest=bigMoveSelfTest();
+  return{passed:p.rows.length===3&&p.rows[0].time<p.rows[2].time&&Math.abs(p.rows[0].spread-.5)<.000001&&midOk&&p.rows.every(x=>x.validForExecution)&&sourcePreserved&&summaryMismatchDetected&&forecastDirections&&forecastPlans&&overlapQuarantine&&positionPlans&&screenshotImport&&moveTest.passed,rows:p.rows.length,syntheticLast:p.quality.syntheticLast,sourcePreserved,summaryMismatchDetected,forecastDirections,forecastPlans,overlapQuarantine,positionPlans,screenshotImport,bigMoveTest:moveTest,checkedAt:new Date().toISOString()}
 }
-document.getElementById('summaryBtn').onclick=()=>document.getElementById('summaryFile').click();document.getElementById('summaryFile').onchange=e=>{const f=e.target.files[0];if(f)importTickSummaryFile(f);e.target.value=''};document.getElementById('saveBrokerQuoteBtn').onclick=saveManualBrokerQuote;document.getElementById('clearBrokerQuoteBtn').onclick=clearManualBrokerQuote;document.getElementById('positionUnknownBtn').onclick=()=>setPositionMode('UNKNOWN');document.getElementById('positionFlatBtn').onclick=()=>setPositionMode('FLAT');document.getElementById('positionBuyBtn').onclick=()=>setPositionMode('BUY');document.getElementById('positionSellBtn').onclick=()=>setPositionMode('SELL');document.getElementById('savePositionPlanBtn').onclick=savePositionPlan;document.getElementById('clearPositionPlanBtn').onclick=clearPositionPlan;document.getElementById('refreshBtn').onclick=refresh;document.getElementById('phoneStartBtn').onclick=startPhoneLearning;document.getElementById('phoneStopBtn').onclick=stopPhoneLearning;document.getElementById('confirmBtn').onclick=()=>mark('ENTRY');document.getElementById('tp1Btn').onclick=()=>mark('TP1');document.getElementById('tp2Btn').onclick=()=>mark('TP2');document.getElementById('slBtn').onclick=()=>mark('SL');document.getElementById('expireBtn').onclick=()=>mark('EXPIRED');document.getElementById('runMockBtn').onclick=resolverCheck;document.getElementById('rebuildTicksBtn').onclick=rebuildTickLearning;document.getElementById('exportTicksBtn').onclick=exportTicks;document.getElementById('exportRawBtn').onclick=exportRawTicks;document.getElementById('exportPackageBtn').onclick=exportMatchedPackage;document.getElementById('tickBtn').onclick=()=>document.getElementById('tickFile').click();document.getElementById('tickFile').onchange=e=>{const f=e.target.files[0];if(f)importTicks(f);e.target.value=''};document.getElementById('importBtn').onclick=()=>document.getElementById('fileInput').click();document.getElementById('fileInput').onchange=e=>{const f=e.target.files[0];if(f)importBrain(f);e.target.value=''};document.getElementById('exportBtn').onclick=()=>{const payload=clone(app);payload.rawTicksIncluded=false;payload.note='Raw ticks are in IndexedDB; use Export matched package for an exact summary/CSV pair.';download(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),'BTC_ORACLE_R6_16_2_ONE_TAP_SCAN_BRAIN.json')};repairTickLearning();app.meta.build=BUILD;app.meta.selfTest=selfTest();save(true);render();setInterval(()=>{if(document.visibilityState!=='hidden')render()},5000);setTimeout(()=>{if(document.visibilityState!=='hidden')refresh()},250);
+document.getElementById('summaryBtn').onclick=()=>document.getElementById('summaryFile').click();document.getElementById('summaryFile').onchange=e=>{const f=e.target.files[0];if(f)importTickSummaryFile(f);e.target.value=''};document.getElementById('saveBrokerQuoteBtn').onclick=saveManualBrokerQuote;document.getElementById('clearBrokerQuoteBtn').onclick=clearManualBrokerQuote;document.getElementById('positionUnknownBtn').onclick=()=>setPositionMode('UNKNOWN');document.getElementById('positionFlatBtn').onclick=()=>setPositionMode('FLAT');document.getElementById('positionBuyBtn').onclick=()=>setPositionMode('BUY');document.getElementById('positionSellBtn').onclick=()=>setPositionMode('SELL');document.getElementById('savePositionPlanBtn').onclick=savePositionPlan;document.getElementById('clearPositionPlanBtn').onclick=clearPositionPlan;document.getElementById('readMt5ScreenshotBtn').onclick=()=>document.getElementById('mt5ScreenshotFile').click();document.getElementById('mt5ScreenshotFile').onchange=async e=>{const f=e.target.files?.[0];if(f)await processMt5Screenshot(f);e.target.value=''};document.getElementById('applyMt5SnapshotBtn').onclick=applyMt5ScreenshotSnapshot;document.getElementById('discardMt5SnapshotBtn').onclick=discardMt5Screenshot;document.getElementById('refreshBtn').onclick=refresh;document.getElementById('phoneStartBtn').onclick=startPhoneLearning;document.getElementById('phoneStopBtn').onclick=stopPhoneLearning;document.getElementById('confirmBtn').onclick=()=>mark('ENTRY');document.getElementById('tp1Btn').onclick=()=>mark('TP1');document.getElementById('tp2Btn').onclick=()=>mark('TP2');document.getElementById('slBtn').onclick=()=>mark('SL');document.getElementById('expireBtn').onclick=()=>mark('EXPIRED');document.getElementById('runMockBtn').onclick=resolverCheck;document.getElementById('rebuildTicksBtn').onclick=rebuildTickLearning;document.getElementById('exportTicksBtn').onclick=exportTicks;document.getElementById('exportRawBtn').onclick=exportRawTicks;document.getElementById('exportPackageBtn').onclick=exportMatchedPackage;document.getElementById('tickBtn').onclick=()=>document.getElementById('tickFile').click();document.getElementById('tickFile').onchange=e=>{const f=e.target.files[0];if(f)importTicks(f);e.target.value=''};document.getElementById('importBtn').onclick=()=>document.getElementById('fileInput').click();document.getElementById('fileInput').onchange=e=>{const f=e.target.files[0];if(f)importBrain(f);e.target.value=''};document.getElementById('exportBtn').onclick=()=>{const payload=clone(app);payload.rawTicksIncluded=false;payload.note='Raw ticks are in IndexedDB; use Export matched package for an exact summary/CSV pair.';download(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),'BTC_ORACLE_R6_17_0_BIG_MOVE_RADAR_BRAIN.json')};repairTickLearning();app.meta.build=BUILD;app.meta.selfTest=selfTest();save(true);render();setInterval(()=>{if(document.visibilityState!=='hidden')render()},5000);setInterval(()=>{if(document.visibilityState!=='hidden'&&app.paper?.position==='OPEN')refresh()},10000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='hidden'&&app.paper?.position==='OPEN')refresh()});setTimeout(()=>{if(document.visibilityState!=='hidden')refresh()},250);
 </script></body></html>
