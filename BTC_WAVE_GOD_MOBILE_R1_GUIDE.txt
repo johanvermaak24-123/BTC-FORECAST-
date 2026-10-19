@@ -1,0 +1,55 @@
+BTC WAVE GOD MOBILE R1 — iPHONE / TRADINGVIEW
+
+WHY TRADINGVIEW
+The MetaTrader 5 iPhone app does not support installing custom MQL5 indicators.
+The practical iPhone route is therefore a TradingView Pine Script version.
+
+WHAT MOBILE R1 INCLUDES
+- Confirmed wave painting
+- M15 / H1 / H4 direction context
+- NEXT WAVE UP / DOWN
+- Model score
+- State
+- T1 conservative
+- T2 expected
+- T3 extended
+- Turn-risk logic
+- Projected main wave -> counter-wave -> continuation path
+- Frozen A+ entry / T2 / invalidation
+- Multi-wave A+ cycle: it can fire again after T2/invalidation + reset
+- Dynamic TradingView alerts suitable for phone notifications
+- Compact top-left mobile HUD
+
+IMPORTANT DIFFERENCE FROM MT5
+This is a TradingView implementation, not the same MQL5 runtime.
+Prices depend on the TradingView symbol/feed you select. They may differ slightly from
+your Pepperstone MT5 BTCUSD price unless you have access to the same/broker-specific feed.
+
+HOW TO INSTALL
+1. On TradingView web/desktop, open a BTC chart.
+2. Open Pine Editor.
+3. Create a new Indicator.
+4. Delete the default code.
+5. Paste the complete BTC_WAVE_GOD_MOBILE_R1.pine code.
+6. Save it as BTC WAVE GOD MOBILE R1.
+7. Click Add to chart.
+8. Save the chart layout.
+9. On your iPhone, open TradingView while signed into the same account.
+10. Open the saved layout / add the saved personal script from My Scripts.
+11. Use M15 as the primary A+ chart. M5 is the faster management view.
+
+PHONE ALERTS
+Create a TradingView alert using the indicator.
+For dynamic messages, choose the condition "Any alert() function call".
+Enable push notifications in the TradingView iPhone app.
+
+FIRST TEST
+Do not compare one signal only. Record each A+ signal:
+- direction
+- entry reference
+- frozen T2
+- invalidation
+- whether T2 or invalidation was reached first
+Then compare the mobile version with the MT5 version.
+
+This is an experimental indicator and forecast model, not a guaranteed trading system.

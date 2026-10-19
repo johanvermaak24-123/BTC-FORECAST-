@@ -1,0 +1,458 @@
+//@version=6
+indicator("BTC WAVE GOD MOBILE R1", overlay=true, max_lines_count=500, max_labels_count=200, max_boxes_count=50)
+
+// ============================================================================
+// BTC WAVE GOD MOBILE R1
+// TradingView / iPhone-oriented port inspired by the MT5 Wave God workflow.
+// Non-repainting design preference: pivots are only accepted after confirmation,
+// higher-timeframe requests use lookahead_off, and A+ decisions use closed bars.
+// ============================================================================
+
+// ------------------------- USER INPUTS ---------------------------------------
+groupCore = "CORE"
+fastLen        = input.int(20, "Fast EMA", minval=2, group=groupCore)
+slowLen        = input.int(55, "Slow EMA", minval=5, group=groupCore)
+rsiLen         = input.int(14, "RSI", minval=2, group=groupCore)
+atrLen         = input.int(14, "ATR", minval=2, group=groupCore)
+diLen          = input.int(14, "DI Length", minval=2, group=groupCore)
+adxSmooth      = input.int(14, "ADX Smoothing", minval=2, group=groupCore)
+pivotSpan      = input.int(3, "Wave pivot confirmation bars", minval=2, maxval=12, group=groupCore)
+sampleMax      = input.int(20, "Historical waves kept", minval=6, maxval=60, group=groupCore)
+dirThreshold   = input.float(25.0, "Direction threshold", minval=5, maxval=70, step=1, group=groupCore)
+
+groupTargets = "WAVE TARGET MAP"
+futureBars      = input.int(18, "Projection bars", minval=6, maxval=80, group=groupTargets)
+pullbackPct     = input.float(0.32, "Projected counter-wave depth", minval=0.10, maxval=0.70, step=0.01, group=groupTargets)
+showForecast    = input.bool(true, "Show projected wave", group=groupTargets)
+showTurnZone    = input.bool(true, "Show turn zone", group=groupTargets)
+showTargets     = input.bool(true, "Show T1 / T2 / T3", group=groupTargets)
+showHistorical  = input.bool(true, "Paint confirmed historical waves", group=groupTargets)
+
+groupA = "MULTI-WAVE A+ MODE"
+aPlusOnlyM15       = input.bool(true, "A+ signals only on M15", group=groupA)
+minModelScore      = input.int(80, "Minimum model score", minval=50, maxval=100, group=groupA)
+minQualityScore    = input.int(82, "Minimum A+ quality", minval=50, maxval=100, group=groupA)
+minRoomT2ATR       = input.float(1.75, "Minimum room to T2 (ATR)", minval=0.25, maxval=10, step=0.05, group=groupA)
+minRRT2            = input.float(1.20, "Minimum RR to T2", minval=0.25, maxval=10, step=0.05, group=groupA)
+requireFullHTF      = input.bool(true, "Require M15 + H1 + H4 alignment", group=groupA)
+requireContinuation = input.bool(true, "Require CONTINUATION state", group=groupA)
+enableAlerts        = input.bool(true, "Dynamic TradingView alerts", group=groupA)
+minBarsAfterExit    = input.int(1, "Bars after T2/invalidation before reset", minval=1, maxval=12, group=groupA)
+
+groupUI = "MOBILE HUD"
+showHUD        = input.bool(true, "Show compact mobile HUD", group=groupUI)
+showSetupLines = input.bool(true, "Show frozen A+ setup levels", group=groupUI)
+
+// ------------------------- HELPERS -------------------------------------------
+f_dir(float a, float b) =>
+    a > b ? 1 : a < b ? -1 : 0
+
+f_clamp(float v, float lo, float hi) =>
+    math.max(lo, math.min(hi, v))
+
+f_add_sample(array<float> arr, float v, int maxN) =>
+    if not na(v) and v > 0
+        array.push(arr, v)
+        if array.size(arr) > maxN
+            array.shift(arr)
+
+f_percentile(array<float> arr, float p) =>
+    float out = na
+    int n = array.size(arr)
+    if n > 0
+        array<float> tmp = array.copy(arr)
+        array.sort(tmp, order.ascending)
+        int idx = int(math.round((n - 1) * f_clamp(p, 0.0, 1.0)))
+        out := array.get(tmp, idx)
+    out
+
+f_dir_text(int d) =>
+    d > 0 ? "UP" : d < 0 ? "DOWN" : "MIXED"
+
+f_col_dir(int d) =>
+    d > 0 ? color.lime : d < 0 ? color.red : color.silver
+
+f_tf_dir(string tf) =>
+    request.security(
+         syminfo.tickerid,
+         tf,
+         ta.ema(close, fastLen) > ta.ema(close, slowLen) ? 1 :
+         ta.ema(close, fastLen) < ta.ema(close, slowLen) ? -1 : 0,
+         gaps=barmerge.gaps_off,
+         lookahead=barmerge.lookahead_off)
+
+f_state_color(string s) =>
+    str.contains(s, "CONTINUATION") ? color.lime :
+    str.contains(s, "PULLBACK") ? color.yellow :
+    str.contains(s, "REVERSAL") ? color.red :
+    str.contains(s, "EXHAUSTION") ? color.orange :
+    str.contains(s, "UNCLEAR") ? color.silver :
+    color.aqua
+
+// ------------------------- CORE SERIES ---------------------------------------
+emaFast = ta.ema(close, fastLen)
+emaSlow = ta.ema(close, slowLen)
+atr     = ta.atr(atrLen)
+rsi     = ta.rsi(close, rsiLen)
+[plusDI, minusDI, adx] = ta.dmi(diLen, adxSmooth)
+
+float erDen = ta.sma(math.abs(ta.change(close)), 10) * 10.0
+float er = erDen > 0 ? math.abs(close - close[10]) / erDen : 0.0
+
+int localDir = f_dir(emaFast, emaSlow)
+int momentumDir = plusDI > minusDI ? 1 : plusDI < minusDI ? -1 : 0
+int rsiDir = rsi > 55 ? 1 : rsi < 45 ? -1 : 0
+
+int m15Dir = f_tf_dir("15")
+int h1Dir  = f_tf_dir("60")
+int h4Dir  = f_tf_dir("240")
+
+string regime = adx >= 25 and er >= 0.30 ? "TREND" :
+                adx >= 18 ? "MIXED" : "RANGE"
+
+// ------------------------- CONFIRMED WAVE STORE ------------------------------
+ph = ta.pivothigh(high, pivotSpan, pivotSpan)
+pl = ta.pivotlow(low, pivotSpan, pivotSpan)
+
+var int   lastPivotType  = 0        // +1 high, -1 low
+var float lastPivotPrice = na
+var int   lastPivotBar   = na
+var float lastSwingHigh  = na
+var float lastSwingLow   = na
+
+var array<float> upWaveATR   = array.new_float()
+var array<float> downWaveATR = array.new_float()
+
+if not na(ph)
+    int pBar = bar_index - pivotSpan
+    float pAtr = atr[pivotSpan]
+    lastSwingHigh := ph
+
+    if lastPivotType == -1 and not na(lastPivotPrice)
+        float dist = ph - lastPivotPrice
+        if pAtr > 0
+            f_add_sample(upWaveATR, dist / pAtr, sampleMax)
+        if showHistorical
+            line.new(lastPivotBar, lastPivotPrice, pBar, ph,
+                     xloc=xloc.bar_index, color=color.lime, width=2)
+        lastPivotType := 1
+        lastPivotPrice := ph
+        lastPivotBar := pBar
+    else if lastPivotType == 1
+        if na(lastPivotPrice) or ph > lastPivotPrice
+            lastPivotPrice := ph
+            lastPivotBar := pBar
+    else
+        lastPivotType := 1
+        lastPivotPrice := ph
+        lastPivotBar := pBar
+
+if not na(pl)
+    int pBar = bar_index - pivotSpan
+    float pAtr = atr[pivotSpan]
+    lastSwingLow := pl
+
+    if lastPivotType == 1 and not na(lastPivotPrice)
+        float dist = lastPivotPrice - pl
+        if pAtr > 0
+            f_add_sample(downWaveATR, dist / pAtr, sampleMax)
+        if showHistorical
+            line.new(lastPivotBar, lastPivotPrice, pBar, pl,
+                     xloc=xloc.bar_index, color=color.rgb(255, 99, 71), width=2)
+        lastPivotType := -1
+        lastPivotPrice := pl
+        lastPivotBar := pBar
+    else if lastPivotType == -1
+        if na(lastPivotPrice) or pl < lastPivotPrice
+            lastPivotPrice := pl
+            lastPivotBar := pBar
+    else
+        lastPivotType := -1
+        lastPivotPrice := pl
+        lastPivotBar := pBar
+
+// ------------------------- DIRECTION ENGINE ----------------------------------
+float raw = 0.0
+raw += 18.0 * h4Dir
+raw += 17.0 * h1Dir
+raw += 15.0 * m15Dir
+raw += 14.0 * localDir
+raw += 8.0  * momentumDir
+raw += 3.0  * rsiDir
+raw += close > open ? 3.0 : close < open ? -3.0 : 0.0
+
+int forecastDir = raw >= dirThreshold ? 1 : raw <= -dirThreshold ? -1 : 0
+int modelScore  = int(math.min(100.0, math.round(math.abs(raw))))
+
+int htfSame = (h4Dir == forecastDir ? 1 : 0) +
+              (h1Dir == forecastDir ? 1 : 0) +
+              (m15Dir == forecastDir ? 1 : 0)
+
+bool fullHTF = forecastDir != 0 and htfSame == 3
+
+// ------------------------- TARGET MAP ----------------------------------------
+array<float> activeSamples = forecastDir > 0 ? upWaveATR : downWaveATR
+float p35 = f_percentile(activeSamples, 0.35)
+float p50 = f_percentile(activeSamples, 0.50)
+float p70 = f_percentile(activeSamples, 0.70)
+
+p35 := na(p35) ? 1.60 : p35
+p50 := na(p50) ? 2.35 : p50
+p70 := na(p70) ? 3.10 : p70
+
+float base = forecastDir > 0 ? lastSwingLow : forecastDir < 0 ? lastSwingHigh : na
+base := na(base) ? close : base
+
+float t1 = forecastDir != 0 ? base + forecastDir * p35 * atr : na
+float t2 = forecastDir != 0 ? base + forecastDir * p50 * atr : na
+float t3 = forecastDir != 0 ? base + forecastDir * p70 * atr : na
+
+float roomT2ATR = forecastDir != 0 and atr > 0 ? forecastDir * (t2 - close) / atr : 0.0
+float totalToT2 = forecastDir != 0 ? math.abs(t2 - base) : na
+float doneMove  = forecastDir != 0 ? math.abs(close - base) : na
+float waveProgress = not na(totalToT2) and totalToT2 > 0 ? doneMove / totalToT2 : 0.0
+
+string turnRisk = waveProgress >= 0.95 or (forecastDir > 0 and rsi >= 72) or (forecastDir < 0 and rsi <= 28) ? "HIGH" :
+                  waveProgress >= 0.72 or (forecastDir > 0 and rsi >= 66) or (forecastDir < 0 and rsi <= 34) ? "MEDIUM" :
+                  "LOW"
+
+string state = forecastDir == 0 or regime == "RANGE" ? "UNCLEAR / RANGE" :
+               fullHTF and localDir == forecastDir and momentumDir == forecastDir ? "CONTINUATION " + f_dir_text(forecastDir) :
+               "WAVE DEVELOPING " + f_dir_text(forecastDir)
+
+// ------------------------- A+ QUALITY -----------------------------------------
+float q = modelScore * 0.55
+q += htfSame == 3 ? 18 : htfSame == 2 ? 10 : htfSame == 1 ? 3 : 0
+int localSame = (localDir == forecastDir ? 1 : 0) +
+                (momentumDir == forecastDir ? 1 : 0) +
+                (rsiDir == forecastDir ? 1 : 0)
+q += localSame == 3 ? 10 : localSame == 2 ? 6 : localSame == 1 ? 2 : 0
+q += regime == "TREND" ? 7 : regime == "MIXED" ? 3 : 0
+q += roomT2ATR >= 2.5 ? 5 : roomT2ATR >= minRoomT2ATR ? 3 : 0
+q += str.contains(state, "CONTINUATION") ? 5 : 1
+q -= turnRisk == "HIGH" ? 22 : turnRisk == "MEDIUM" ? 8 : 0
+int quality = int(math.round(f_clamp(q, 0, 100)))
+
+float invalidation = forecastDir > 0 ? lastSwingLow : forecastDir < 0 ? lastSwingHigh : na
+bool invalidOK = forecastDir > 0 ? not na(invalidation) and invalidation < close :
+                 forecastDir < 0 ? not na(invalidation) and invalidation > close : false
+
+float riskDist   = invalidOK ? math.abs(close - invalidation) : na
+float rewardT2   = forecastDir != 0 ? forecastDir * (t2 - close) : na
+float rrT2       = not na(riskDist) and riskDist > 0 and rewardT2 > 0 ? rewardT2 / riskDist : 0.0
+
+bool correctTF = not aPlusOnlyM15 or timeframe.period == "15"
+bool htfOK = requireFullHTF ? fullHTF : htfSame >= 2
+bool stateOK = requireContinuation ? str.contains(state, "CONTINUATION") : forecastDir != 0
+
+bool aPlusBase =
+     correctTF and
+     forecastDir != 0 and
+     modelScore >= minModelScore and
+     quality >= minQualityScore and
+     htfOK and
+     regime != "RANGE" and
+     stateOK and
+     turnRisk != "HIGH" and
+     roomT2ATR >= minRoomT2ATR and
+     invalidOK and
+     rrT2 >= minRRT2
+
+// ------------------------- MULTI-WAVE CYCLE -----------------------------------
+var bool  setupActive = false
+var int   setupDir = 0
+var float setupEntry = na
+var float setupT2 = na
+var float setupInv = na
+var int   setupQuality = na
+var bool  resetNeeded = false
+var bool  resetSeen = true
+var int   lastExitBar = na
+
+bool newAPlus = false
+bool t2HitEvent = false
+bool invalidEvent = false
+
+if barstate.isconfirmed
+    if setupActive
+        bool hitT2 = setupDir > 0 ? high >= setupT2 : low <= setupT2
+        bool hitInv = setupDir > 0 ? low <= setupInv : high >= setupInv
+
+        // Conservative if both occur inside the same bar.
+        if hitInv
+            setupActive := false
+            resetNeeded := true
+            resetSeen := false
+            lastExitBar := bar_index
+            invalidEvent := true
+        else if hitT2
+            setupActive := false
+            resetNeeded := true
+            resetSeen := false
+            lastExitBar := bar_index
+            t2HitEvent := true
+
+    if not setupActive and resetNeeded and not resetSeen
+        bool cooldownOK = na(lastExitBar) or bar_index - lastExitBar >= minBarsAfterExit
+        bool directionChanged = forecastDir != 0 and setupDir != 0 and forecastDir != setupDir
+        bool pullbackSeen = setupDir > 0 ? close < emaFast or momentumDir < 0 :
+                            setupDir < 0 ? close > emaFast or momentumDir > 0 : false
+        bool unclearSeen = str.contains(state, "UNCLEAR") or str.contains(state, "WAVE DEVELOPING")
+        if cooldownOK and (directionChanged or pullbackSeen or unclearSeen)
+            resetSeen := true
+
+    bool cycleAvailable = not setupActive and (not resetNeeded or resetSeen)
+
+    if aPlusBase and cycleAvailable
+        setupActive := true
+        setupDir := forecastDir
+        setupEntry := close
+        setupT2 := t2
+        setupInv := invalidation
+        setupQuality := quality
+        resetNeeded := false
+        resetSeen := false
+        newAPlus := true
+
+        if enableAlerts
+            alert("BTC WAVE GOD MOBILE R1 | NEW WAVE A+ " + f_dir_text(setupDir) +
+                  " | QUALITY " + str.tostring(setupQuality) + "/100" +
+                  " | ENTRY REF " + str.tostring(setupEntry, format.mintick) +
+                  " | T2 " + str.tostring(setupT2, format.mintick) +
+                  " | INVALIDATION " + str.tostring(setupInv, format.mintick) +
+                  " | RR->T2 " + str.tostring(rrT2, "#.##"),
+                  alert.freq_once_per_bar_close)
+
+    if t2HitEvent and enableAlerts
+        alert("BTC WAVE GOD MOBILE R1 | T2 HIT " + f_dir_text(setupDir) +
+              " | WAIT FOR TURN / NEW WAVE RESET",
+              alert.freq_once_per_bar_close)
+
+    if invalidEvent and enableAlerts
+        alert("BTC WAVE GOD MOBILE R1 | A+ INVALIDATED " + f_dir_text(setupDir) +
+              " | WAIT FOR NEW WAVE RESET",
+              alert.freq_once_per_bar_close)
+
+// ------------------------- VISUAL FORECAST -----------------------------------
+var line forecast1 = na
+var line forecast2 = na
+var line forecast3 = na
+var line target1Line = na
+var line target2Line = na
+var line target3Line = na
+var box  turnBox = na
+
+if barstate.islast
+    if not na(forecast1)
+        line.delete(forecast1)
+    if not na(forecast2)
+        line.delete(forecast2)
+    if not na(forecast3)
+        line.delete(forecast3)
+    if not na(target1Line)
+        line.delete(target1Line)
+    if not na(target2Line)
+        line.delete(target2Line)
+    if not na(target3Line)
+        line.delete(target3Line)
+    if not na(turnBox)
+        box.delete(turnBox)
+
+    if forecastDir != 0 and showForecast
+        color upCol = color.lime
+        color dnCol = color.rgb(255, 80, 80)
+        color mainCol = forecastDir > 0 ? upCol : dnCol
+        color counterCol = forecastDir > 0 ? dnCol : upCol
+
+        int b1 = bar_index + int(math.round(futureBars * 0.45))
+        int b2 = bar_index + int(math.round(futureBars * 0.70))
+        int b3 = bar_index + futureBars
+
+        float pull = t2 - forecastDir * math.abs(t2 - base) * pullbackPct
+
+        forecast1 := line.new(bar_index, close, b1, t2, xloc=xloc.bar_index,
+                              color=mainCol, style=line.style_dashed, width=4)
+        forecast2 := line.new(b1, t2, b2, pull, xloc=xloc.bar_index,
+                              color=counterCol, style=line.style_dashed, width=3)
+        forecast3 := line.new(b2, pull, b3, t3, xloc=xloc.bar_index,
+                              color=mainCol, style=line.style_dashed, width=4)
+
+        if showTargets
+            target1Line := line.new(bar_index, t1, b3, t1, xloc=xloc.bar_index,
+                                    color=color.new(mainCol, 35), width=1)
+            target2Line := line.new(bar_index, t2, b3, t2, xloc=xloc.bar_index,
+                                    color=mainCol, width=3)
+            target3Line := line.new(bar_index, t3, b3, t3, xloc=xloc.bar_index,
+                                    color=color.new(mainCol, 10), width=2)
+
+        if showTurnZone
+            float zTop = math.max(t1, t3)
+            float zBot = math.min(t1, t3)
+            turnBox := box.new(bar_index + 1, zTop, b3, zBot,
+                               xloc=xloc.bar_index,
+                               border_color=color.new(color.yellow, 30),
+                               border_style=line.style_dotted,
+                               bgcolor=color.new(color.yellow, 92))
+
+// ------------------------- FROZEN A+ LEVELS ----------------------------------
+plot(showSetupLines and setupActive ? setupEntry : na,
+     "A+ Entry Ref", color=color.aqua, linewidth=1, style=plot.style_linebr)
+
+plot(showSetupLines and setupActive ? setupT2 : na,
+     "A+ Frozen T2", color=setupDir > 0 ? color.lime : color.red,
+     linewidth=3, style=plot.style_linebr)
+
+plot(showSetupLines and setupActive ? setupInv : na,
+     "A+ Invalidation", color=color.fuchsia, linewidth=1, style=plot.style_linebr)
+
+// ------------------------- MOBILE HUD ----------------------------------------
+var table hud = table.new(position.top_left, 2, 13,
+                          bgcolor=color.new(color.black, 0),
+                          frame_color=color.gray, frame_width=1,
+                          border_color=color.new(color.gray, 70))
+
+if barstate.islast and showHUD
+    string role = timeframe.period == "15" ? "M15 PRIMARY / A+" :
+                  timeframe.period == "5" ? "M5 MANAGEMENT" :
+                  timeframe.period == "60" ? "H1 BROAD WAVE" :
+                  timeframe.period == "240" ? "H4 MASTER" :
+                  "ANALYSIS"
+
+    color dCol = f_col_dir(forecastDir)
+    color sCol = f_state_color(state)
+
+    table.cell(hud, 0, 0, "BTC WAVE GOD", text_color=color.white)
+    table.cell(hud, 1, 0, "MOBILE R1", text_color=color.white)
+    table.cell(hud, 0, 1, "TF ROLE", text_color=color.silver)
+    table.cell(hud, 1, 1, role, text_color=color.silver)
+    table.cell(hud, 0, 2, "NEXT WAVE", text_color=color.white)
+    table.cell(hud, 1, 2, f_dir_text(forecastDir) + "  " + str.tostring(modelScore) + "/100", text_color=dCol)
+    table.cell(hud, 0, 3, "STATE", text_color=color.white)
+    table.cell(hud, 1, 3, state, text_color=sCol)
+    table.cell(hud, 0, 4, "T1", text_color=color.white)
+    table.cell(hud, 1, 4, str.tostring(t1, format.mintick), text_color=dCol)
+    table.cell(hud, 0, 5, "T2 EXPECTED", text_color=color.white)
+    table.cell(hud, 1, 5, str.tostring(t2, format.mintick), text_color=dCol)
+    table.cell(hud, 0, 6, "T3", text_color=color.white)
+    table.cell(hud, 1, 6, str.tostring(t3, format.mintick), text_color=dCol)
+    table.cell(hud, 0, 7, "TURN RISK", text_color=color.white)
+    table.cell(hud, 1, 7, turnRisk, text_color=turnRisk == "HIGH" ? color.red : turnRisk == "MEDIUM" ? color.yellow : color.lime)
+    table.cell(hud, 0, 8, "REV", text_color=color.white)
+    table.cell(hud, 1, 8, str.tostring(invalidation, format.mintick), text_color=color.fuchsia)
+    table.cell(hud, 0, 9, "ROOM->T2", text_color=color.white)
+    table.cell(hud, 1, 9, str.tostring(roomT2ATR, "#.##") + " ATR", text_color=color.white)
+    table.cell(hud, 0, 10, "A+ QUALITY", text_color=color.white)
+    table.cell(hud, 1, 10, str.tostring(quality) + "/100", text_color=quality >= minQualityScore ? color.lime : color.yellow)
+    table.cell(hud, 0, 11, "A+ STATUS", text_color=color.white)
+    table.cell(hud, 1, 11,
+               setupActive ? "ACTIVE " + f_dir_text(setupDir) :
+               resetNeeded and not resetSeen ? "WAIT RESET" :
+               aPlusBase ? "READY" : "WAIT",
+               text_color=setupActive ? f_col_dir(setupDir) : color.yellow)
+    table.cell(hud, 0, 12, "RR->T2", text_color=color.white)
+    table.cell(hud, 1, 12, str.tostring(rrT2, "#.##"), text_color=color.white)
+
+// ------------------------- ALERT CONDITIONS ----------------------------------
+alertcondition(newAPlus, "New Wave A+", "BTC WAVE GOD MOBILE R1: New A+ wave setup")
+alertcondition(t2HitEvent, "T2 Hit", "BTC WAVE GOD MOBILE R1: Frozen T2 hit")
+alertcondition(invalidEvent, "A+ Invalidated", "BTC WAVE GOD MOBILE R1: Setup invalidated")
